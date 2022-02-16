@@ -21,9 +21,8 @@ jobs:
         with:
           node-version: "lts/*"
 
-      - run: npm install --frozen-lockfile
-
-      - run: npm run build
+      - run: yarn install --frozen-lockfile
+      - run: yarn build
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
