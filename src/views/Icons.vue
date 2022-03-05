@@ -29,15 +29,10 @@
 </template>
 
 <script>
-import GuideSection from '@/components/GuideSection.vue'
 import { defineComponent } from 'vue'
 
 export default defineComponent ({
   name: 'Icons',
-
-  components: {
-    GuideSection
-  },
 })
 
 </script>

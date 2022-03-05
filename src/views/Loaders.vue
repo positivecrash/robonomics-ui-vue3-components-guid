@@ -58,19 +58,10 @@
 </template>
 
 <script>
-import GuideSection from '@/components/GuideSection.vue'
-import UseComponent from '@/components/UseComponent.vue'
-import Props from '@/components/Props.vue'
 import { defineComponent } from 'vue'
 
 export default defineComponent ({
   name: 'Loaders',
-
-  components: {
-    GuideSection,
-    UseComponent,
-    Props
-  },
 
   data() {
     return {

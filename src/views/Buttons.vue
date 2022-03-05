@@ -26,10 +26,10 @@
     </guide-section>
 
     <guide-section
-      :title = "'Оформление: успешная кнопка'"
+      :title = "'Оформление: зеленая кнопка'"
       :code = "code3" 
     >
-      <p>В основном нужна для обозначения успешного завершения после клика на кнопку.</p>
+      <p>Применяется в исключительных случаях.</p>
       <robo-button type="ok">Success button</robo-button>
     </guide-section>
 
@@ -45,7 +45,7 @@
       :title = "'Оформление: серая кнопка'"
       :code = "code5" 
     >
-      <p>В основном для disabled неактивных состояний. Но это только цветовой вариант, ниже покажу функциональное использование.</p>
+      <p>Это просто цветовое оформление на всякий случай.</p>
       <robo-button type="na">n/a button</robo-button>
     </guide-section>
 
@@ -53,7 +53,7 @@
       :title = "'Оформление: outlined'"
       :code = "code6" 
     >
-      <p>Рекомендую использовать "outlined" для ссылок или когда больше одного действия на страницу, а основное оформление для кнопок основного действия(типа submit одной главной формы на странице).</p>
+      <p>Рекомендую использовать "outlined" для ссылок или когда больше одного действия на страницу.</p>
       <robo-button outlined>Button</robo-button> <robo-button type="ok" outlined>Success button</robo-button> <robo-button type="alarm" outlined>Alarm button</robo-button> <robo-button type="na" outlined>n/a button</robo-button>
     </guide-section>
 
@@ -106,20 +106,12 @@
 </template>
 
 <script>
-import GuideSection from '@/components/GuideSection.vue'
-import UseComponent from '@/components/UseComponent.vue'
 import { defineComponent } from 'vue'
 
 // import { RoboButton } from 'robonomics-ui'
 
 export default defineComponent ({
   name: 'Buttons',
-
-  components: {
-    GuideSection,
-    // RoboButton,
-    UseComponent
-  },
 
   data() {
     return {

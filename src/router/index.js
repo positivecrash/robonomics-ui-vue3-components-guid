@@ -6,6 +6,8 @@ import Logo from '../views/Logo.vue'
 import Breadcrumbs from '../views/Breadcrumbs.vue'
 import Icons from '../views/Icons.vue'
 import Sidebar from '../views/Sidebar.vue'
+import Cards from '../views/Cards.vue'
+import Progress from '../views/Progress.vue'
 
 const routes = [
   {
@@ -46,6 +48,16 @@ const routes = [
     path: '/sidebar',
     name: 'Sidebar',
     component: Sidebar
+  },
+  {
+    path: '/cards',
+    name: 'Cards',
+    component: Cards
+  },
+  {
+    path: '/progress',
+    name: 'Progress',
+    component: Progress
   },
 ]
 

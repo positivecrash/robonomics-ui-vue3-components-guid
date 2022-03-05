@@ -98,19 +98,21 @@ export default {
           <router-link to="/sidebar">Sidebar</router-link>
         </div>
 
+        <div>
+          <router-link to="/cards">Cards</router-link>
+        </div>
+
+        <div>
+          <router-link to="/progress">Progress</router-link>
+        </div>
+
       </section>
     </section>
   </div>
 </template>
 
 <script>
-import GuideSection from '@/components/GuideSection.vue'
-
 export default {
   name: 'Home',
-
-  components: {
-    GuideSection
-  },
 }
 </script>
