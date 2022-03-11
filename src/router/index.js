@@ -8,6 +8,7 @@ import Icons from '../views/Icons.vue'
 import Sidebar from '../views/Sidebar.vue'
 import Cards from '../views/Cards.vue'
 import Progress from '../views/Progress.vue'
+import FormElements from '../views/FormElements.vue'
 
 const routes = [
   {
@@ -58,6 +59,11 @@ const routes = [
     path: '/progress',
     name: 'Progress',
     component: Progress
+  },
+  {
+    path: '/form-elements',
+    name: 'FormElements',
+    component: FormElements
   },
 ]
 

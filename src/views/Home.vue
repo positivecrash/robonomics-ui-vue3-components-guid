@@ -106,6 +106,10 @@ export default {
           <router-link to="/progress">Progress</router-link>
         </div>
 
+        <div>
+          <router-link to="/form-elements">Form elements</router-link>
+        </div>
+
       </section>
     </section>
   </div>

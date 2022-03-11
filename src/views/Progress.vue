@@ -48,7 +48,8 @@ export default defineComponent ({
 
   data() {
     return {
-      code1: "<robo-progress />"
+      code1: "<robo-progress />",
+      code2: '<robo-progress progress="80" />',
     }
   },
 })
