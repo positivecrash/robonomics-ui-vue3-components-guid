@@ -13,14 +13,18 @@
       :title = "'Loading'"
       :code = "code1" 
     >
-       <robo-card loading disabled> content </robo-card>
+       <robo-card loading>
+           <robo-card-section>content</robo-card-section>
+        </robo-card>
     </guide-section>
 
     <guide-section
       :title = "'Progress %'"
       :code = "code2"
     >
-       <robo-card progress="35"> content, progress 35% </robo-card>
+       <robo-card progress="35">
+           <robo-card-section>content, progress 35%</robo-card-section>
+        </robo-card>
     </guide-section>
 
     <guide-section
@@ -235,8 +239,16 @@ export default defineComponent({
     },
 
     computed: {
-        code1: function() { return '<robo-card loading> content </robo-card>' },
-        code2: function() { return '<robo-card progress="35"> content, progress 35% </robo-card>' },
+        code1: function() { return '<robo-card loading>\n' +
+        '\t<robo-card-section>\n' +
+        '\t\tcontent\n' +
+        '\t</robo-card-section>\n' +
+        '</robo-card>' },
+        code2: function() { return '<robo-card progress="35">\n' +
+        '\t<robo-card-section>\n' +
+        '\t\tcontent, progress 35%\n' +
+        '\t</robo-card-section>\n' +
+        '</robo-card>' },
         code3: function() {
             return '<robo-card img-src="images/card-back-sample.png"' + this.outlineSec + this.disabledSec + this.loadingSec + '>\n' +
                 '\t<robo-card-label>\n'+

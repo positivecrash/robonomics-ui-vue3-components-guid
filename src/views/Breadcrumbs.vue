@@ -74,16 +74,16 @@ export default defineComponent ({
       code1: 
         "<robo-breadcrumbs :items='items' />\n\n" +
         "items: [\n" +
-            "{\n" +
-              "text: 'Devices',\n" +
-              "active: false,\n" +
-              "href: '/devices',\n" +
-            "},\n" +
-            "{\n" +
-              "text: 'Device 1',\n" +
-              "active: true,\n" +
-              "href: '/device-1',\n" +
-            "},\n" +
+            "\t{\n" +
+              "\t\ttext: 'Devices',\n" +
+              "\t\tactive: false,\n" +
+              "\t\thref: '/devices',\n" +
+            "\t},\n" +
+            "\t{\n" +
+              "\t\ttext: 'Device 1',\n" +
+              "\t\tactive: true,\n" +
+              "\t\thref: '/device-1',\n" +
+            "\t},\n" +
           "]\n"
       }
   },

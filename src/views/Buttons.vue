@@ -103,6 +103,79 @@
       <robo-button href="https://robonomics.network">Go</robo-button>
     </guide-section>
 
+    <guide-section
+      :title = "'Props for robo-button'"
+    >
+
+    <Props>
+      <tr>
+        <td>href</td>
+        <td>String</td>
+        <td></td>
+        <td>null</td>
+        <td></td>
+        <td>Можно указать ссылку и тогда кнопка станет элементом <code>&#8249;a&#8250;</code> с соответствующими тегами. Если ссылка внешняя, автоматически добавляется атрибут <code>target="_blank"</code></td>
+      </tr>
+      <tr>
+        <td>type</td>
+        <td>String</td>
+        <td></td>
+        <td>'primary'</td>
+        <td>'primary', 'ok', 'alarm', 'na'</td>
+        <td>Различное цветовое оформление</td>
+      </tr>
+      <tr>
+        <td>outlined</td>
+        <td>Boolean</td>
+        <td></td>
+        <td>false</td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>disabled</td>
+        <td>String</td>
+        <td></td>
+        <td>null</td>
+        <td>'disabled', 'success', 'error'</td>
+        <td>Иногда может потребоваться сделать кнопку неактивной, но другого цвета - тогда можно использовать 'success' для зеленой кнопки, для красной 'error'</td>
+      </tr>
+      <tr>
+        <td>block</td>
+        <td>Boolean</td>
+        <td></td>
+        <td>false</td>
+        <td></td>
+        <td>Во всю ширину контейнера</td>
+      </tr>
+      <tr>
+        <td>size</td>
+        <td>String</td>
+        <td></td>
+        <td>'normal'</td>
+        <td>'small', 'normal', 'big'</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>right</td>
+        <td>String</td>
+        <td></td>
+        <td>null</td>
+        <td></td>
+        <td>Это приписка для кнопки. См. пример на этой странице</td>
+      </tr>
+      <tr>
+        <td>loading</td>
+        <td>Boolean</td>
+        <td></td>
+        <td>false</td>
+        <td></td>
+        <td>Автоматически добавляет лоадер и делает кнопку неактивной</td>
+      </tr>
+    </Props>
+      
+    </guide-section>
+
 </template>
 
 <script>
