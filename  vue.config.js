@@ -9,7 +9,7 @@ module.exports = {
             }
         }
     },
-    publicPath: process.env.NODE_ENV === 'production'
-    ? 'http://test.robonomics.network/'
-    : '/'
+    // publicPath: process.env.NODE_ENV === 'production'
+    // ? 'http://test.robonomics.network/'
+    // : '/'
 };

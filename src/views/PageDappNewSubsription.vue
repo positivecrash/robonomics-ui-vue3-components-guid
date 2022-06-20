@@ -127,6 +127,6 @@ export default defineComponent({
             chainformat: 'Robonomics',
             plan: '1 month'
         }
-    }
+    },
 })
 </script>
