@@ -6,8 +6,8 @@ import store from "./store"
 import VueHighlightJS from 'vue3-highlightjs'
 import 'highlight.js/styles/stackoverflow-light.css'
 
-import { robonomicsUI } from 'robonomics-ui'
-import 'robonomics-ui/style.css'
+import { robonomicsUI } from 'robonomics-ui-vue'
+import 'robonomics-ui-vue/style.css'
 
 import GuideSection from './components/GuideSection.vue'
 import UseComponent from './components/UseComponent.vue'

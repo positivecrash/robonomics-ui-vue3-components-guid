@@ -7,7 +7,7 @@
 
 <pre v-highlightjs>
 <code class="bash">
-npm install robonomics-ui
+npm install robonomics-ui-vue
 </code>
 </pre>
 
@@ -15,7 +15,7 @@ npm install robonomics-ui
 
 <pre v-highlightjs>
 <code class="bash">
-yarn add robonomics-ui
+yarn add robonomics-ui-vue
 </code>
 </pre>
      
@@ -48,8 +48,8 @@ export default store
 import { createApp } from 'vue'
 import App from './App.vue'
 
-import { RoboUi } from 'robonomics-ui'
-import 'robonomics-ui/lib.css'
+import { RoboUi } from 'robonomics-ui-vue'
+import 'robonomics-ui-vue/style.css'
 
 createApp(App).use(RoboUi)
 </code>

@@ -1,0 +1,15 @@
+import { createStore } from "vuex" 
+
+const store = createStore({
+   state:{
+      name: "Vue"
+   }
+})
+
+export default store
+
+
+// import Vue from 'vue'
+// import Vuex from 'vuex'
+// Vue.use(Vuex)
+// export default new Vuex.Store({});
