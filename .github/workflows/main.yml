@@ -1,4 +1,4 @@
-name: robonomics-ui-vue3-components-guide
+name: CI
 
 on:
   push:
@@ -21,8 +21,9 @@ jobs:
         with:
           node-version: "lts/*"
 
-      - run: yarn install --frozen-lockfile
-      - run: yarn build
+      - run: npm install --frozen-lockfile
+
+      - run: npm run build
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
