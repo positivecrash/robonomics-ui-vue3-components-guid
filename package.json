@@ -10,10 +10,6 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^6.1.1",
-    "@fortawesome/free-solid-svg-icons": "^6.1.1",
-    "@fortawesome/vue-fontawesome": "^2.0.6",
-    "@polkadot/util-crypto": "^9.4.1",
     "core-js": "^3.6.5",
     "equal-vue": "^0.79.3",
     "robonomics-ui-vue": "^0.0.1-6",
