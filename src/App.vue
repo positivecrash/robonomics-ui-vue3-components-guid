@@ -1,42 +1,35 @@
 <template>
-  <h4><router-link to="/">Robonomics dApp Vue.js 3.0 UI Library</router-link></h4>
-  <router-view/>
+  <component :is="layout" />
 </template>
 
-<style>
+<script>
+import Guide from "@/layouts/Guide";
+import Example from "@/layouts/Example";
 
+export default {
+  components: {
+    Guide,
+    Example,
+  },
+  data() {
+    return {
+      layout: null,
+    };
+  },
+  watch: {
+    $route(to) {
+      // set layout by route meta
+      if (to.meta.layout !== undefined) {
+        this.layout = to.meta.layout
+      } else {
+        this.layout = "Guide" // this is default layout if route meta is not set
+      }
+    },
+  },
 
-#app {
-  max-width: 1200px;
-  margin: 6rem auto;
-}
-
-h1 {
-    text-align: center;
-    margin-bottom: 3rem;
-  }
-
-  p, h2, h3, h4, h5, li {
-    margin-bottom: 1rem;
-  }
-
-  section {
-    margin: 3rem auto;
-  }
-  section section {
-    margin-top: 1.5rem;
-    margin-bottom: 1.5rem;
-  }
-
-  .grid-8 {
-    display: grid;
-    grid-template-columns: repeat(8, 1fr);
-    gap: var(--space)
-  }
-</style>
-
-<style scoped>
-h4 {
-  text-align: center;
-}
-</style>
+  created() {
+		// Setting Language in the HTML document
+		document.documentElement.setAttribute('lang', 'en')
+	}
+};
+</script>

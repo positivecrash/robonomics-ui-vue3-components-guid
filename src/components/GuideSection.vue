@@ -1,8 +1,8 @@
 <template>
-    <section class="border">
-        <h2 v-if="title">{{title}}</h2>
+    <section :class="section ? 'section' : ''">
+        <component :is="section ? 'h2' : 'h4'" v-if="title">{{title}}</component>
         
-        <section><slot></slot></section>
+        <component :is="section ? 'section' : 'div'"><slot></slot></component>
         
         <template v-if="code">
             <details>
@@ -27,6 +27,10 @@ export default defineComponent({
     code: {
       type: String,
       default: null
+    },
+    section: {
+      type: Boolean,
+      default: true
     }
   },
 
@@ -43,12 +47,20 @@ export default defineComponent({
 </script>
 
 <style scoped>
-    .border {
-        border: 1px solid var(--color-gray-light);
+    /* .section {
+        border: 1px solid var(--color-gray);
         padding: var(--space)
+    } */
+
+    .section:not(:last-child) {
+      margin-bottom: calc(var(--space) * 5);
     }
 
     details summary {
         cursor: pointer;
+    }
+
+    h4 {
+      margin: 0;
     }
 </style>

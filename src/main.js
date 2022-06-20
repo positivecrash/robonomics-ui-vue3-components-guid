@@ -1,12 +1,13 @@
 import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
+import store from "./store"
 
 import VueHighlightJS from 'vue3-highlightjs'
 import 'highlight.js/styles/stackoverflow-light.css'
 
-import { RoboUi } from 'robonomics-ui'
-import 'robonomics-ui/lib.css'
+import { robonomicsUI } from 'robonomics-ui'
+import 'robonomics-ui/style.css'
 
 import GuideSection from './components/GuideSection.vue'
 import UseComponent from './components/UseComponent.vue'
@@ -16,8 +17,9 @@ const app = createApp(App)
 
 app
     .use(router)
+    .use(store)
     .use(VueHighlightJS)
-    .use(RoboUi)
+    .use(robonomicsUI, { store })
 
 app
     .component('GuideSection', GuideSection)
@@ -25,3 +27,4 @@ app
     .component('Props', Props)
 
 app.mount('#app')
+

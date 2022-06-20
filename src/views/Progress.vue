@@ -1,8 +1,6 @@
 <template>
     <h1>Progress bar</h1>
-
-    <use-component componentName="RoboProgress"/>
-
+    
     <guide-section
       :title = "'Loading infinite line'"
       :code = "code1" 

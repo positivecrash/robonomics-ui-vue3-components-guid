@@ -1,7 +1,6 @@
 <template>
   <div class="home">
-    <h1>Intro</h1>
-
+   
     <guide-section
       :title = "'Установка'"
     >
@@ -23,11 +22,27 @@ yarn add robonomics-ui
     </guide-section>
 
 
-    <guide-section
-      :title = "'Глобальное подключение всех компонентов'"
+<guide-section
+      :title = "'Подготовка'"
     >
+    <ol>
+      <li>Создать <code>./store.js</code>, если vuex не инициализировано в проекте:
+      <pre v-highlightjs>
+        <code class="javascript">
+import { createStore } from "vuex" 
 
-    <p><b>main.js</b></p>
+const store = createStore({
+   state:{
+      name: "Vue"
+   }
+})
+
+export default store
+      </code>
+      </pre></li>
+
+      <li>
+        Подключить в ./main.js (пока подключение доступно только глобальное):
 <pre v-highlightjs>
 <code class="javascript">
 import { createApp } from 'vue'
@@ -39,79 +54,49 @@ import 'robonomics-ui/lib.css'
 createApp(App).use(RoboUi)
 </code>
 </pre>
-     
-    </guide-section>
+      </li>
+    </ol>
+</guide-section>
 
 
-    <guide-section
-      :title = "'Покомпонентное подключение'"
+<guide-section
+      :title = "'Использование'"
     >
 
-      <p><b>main.js</b></p>
-<pre v-highlightjs>
-<code class="javascript">
-import 'robonomics-ui/lib.css'
-</code>
-</pre>
+  <section>
+    <h3>Компоненты</h3>
 
-    <p><b>Your template file:</b></p>
+    <ul>
+      <li><router-link to="/breadcrumbs">Breadcrumbs</router-link></li>
+      <li><router-link to="/buttons">Button</router-link></li>
+      <li><router-link to="/cards">Cards</router-link></li>
+      <li><router-link to="/grid">Grid</router-link></li>
+      <li><router-link to="/icons">Icons</router-link></li>
+      <li><router-link to="/layouts">Layouts</router-link></li>
+      <li><router-link to="/loaders">Loaders</router-link></li>
+      <li><router-link to="/logo">Logo</router-link></li>
+      <li><router-link to="/progress">Progress</router-link></li>
+      <li><router-link to="/select">Select</router-link></li>
+      <li><router-link to="/sidebar">Sidebar</router-link></li>
+    </ul>
+  </section>
 
-<pre v-highlightjs>
-<code class="javascript">
-import { componentName } from 'robonomics-ui'
-      
-export default {
-    components: { componentName }
-}
-</code>
-</pre>
-     
-    </guide-section>
+  <section>
+    <h3>Примеры страниц</h3>
+    <ul>
+      <li><router-link to="/page-dapp-loading">Dapp Loading</router-link></li>
+      <li><router-link to="/page-dapp-layout-loading">Dapp layout loading content</router-link></li>
+      <li><router-link to="/page-dapp-sections">Dapp sections test: dashboard no subscription</router-link></li>
+      <li><router-link to="/page-dapp-sections-2">Dapp sections test: dashboard with subscription</router-link></li>
+      <li><router-link to="/page-dapp-new-subsription">Dapp sections test: new subscription</router-link></li>
+      <li><router-link to="/page-dapp-subsription-manage">Dapp sections test: subscription manage</router-link></li>
+      <li><router-link to="/page-dapp-subsription-manage">Dapp sections test: subscription manage</router-link></li>
+      <li><router-link to="/page-dapp-devices">Dapp sections test: devices manage</router-link></li>
+    </ul>
+  </section>
 
-    <section>
-      <h2>Компоненты</h2>
-
-      <section>
-        <h3>Примитивы, основные элементы</h3>
-
-        <div>
-          <router-link to="/buttons">Buttons</router-link>
-        </div>
-
-        <div>
-          <router-link to="/loaders">Loaders</router-link>
-        </div>
-
-        <div>
-          <router-link to="/logo">Logo</router-link>
-        </div>
-
-        <div>
-          <router-link to="/breadcrumbs">Breadcrumbs</router-link>
-        </div>
-
-        <div>
-          <router-link to="/icons">Icons</router-link>
-        </div>
-
-        <div>
-          <router-link to="/sidebar">Sidebar</router-link>
-        </div>
-
-        <div>
-          <router-link to="/cards">Cards</router-link>
-        </div>
-
-        <div>
-          <router-link to="/progress">Progress</router-link>
-        </div>
-
-        <div>
-          <router-link to="/form-elements">Form elements</router-link>
-        </div>
-
-      </section>
-    </section>
+</guide-section>
+   
   </div>
 </template>
 

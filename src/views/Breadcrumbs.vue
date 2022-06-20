@@ -1,12 +1,8 @@
 <template>
     <h1>Breadcrumbs</h1>
-    <guide-section
-      :title = "'Вступление'"
-    >
+    <guide-section>
       <p>Предполагается по дизайну, что крошки одновременно выполняют функцию заголовка для страницы.</p>
     </guide-section>
-
-    <use-component componentName="RoboBreadcrumbs"/>
 
     <guide-section
       :title = "'Основное использование'"

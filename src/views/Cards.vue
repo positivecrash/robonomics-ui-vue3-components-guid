@@ -2,14 +2,6 @@
     <h1>Cards</h1>
 
     <guide-section
-      :title = "'Вступление'"
-    >
-      <p>Разные секции.</p>
-    </guide-section>
-
-    <use-component componentName="RoboCard, RoboProgress, RoboCardTitle, RoboCardLabel, RoboCardLabelSection, RoboSelect"/>
-
-    <guide-section
       :title = "'Loading'"
       :code = "code1" 
     >
@@ -25,10 +17,11 @@
        <robo-card progress="35">
            <robo-card-section>content, progress 35%</robo-card-section>
         </robo-card>
+
     </guide-section>
 
     <guide-section
-      :title = "'Составные части'"
+      :title = "'Разное использование'"
       :code = "code3" 
     >
     
@@ -45,15 +38,40 @@
             <input type="checkbox" name="card-outline" v-model="loading" />
             loading
         </label>
+        <label>
+            <select v-model="colorBack">
+              <option value="light">light</option>
+              <option value="dark">dark</option>
+              <option value="lightblue">lightblue</option>
+            </select>
+        </label>
+        <br/>
+        <label>
+            <input type="checkbox" v-model="image" />
+            image
+        </label>
+        <br/>
+        <label v-if="image">
+            backPosition:
+            <input type="text" v-model="backPosition" />
+        </label>
+        <label v-if="image">
+            backRepeat:
+            <input type="text" v-model="backRepeat" />
+        </label>
+        <label v-if="image">
+            backSize
+            <input type="text" v-model="backSize" />
+        </label>
     </section>
     <br/>
 
-       <robo-card img-src="images/card-back-sample.png" :outlined="outlined" :disabled="disabled" :loading="loading">
+       <robo-card :outlined="outlined" :disabled="disabled" :loading="loading" :backImage="imageSrc" :backColor="colorBack" :backPosition="backPosition" :backRepeat="backRepeat" :backSize="backSize">
            <robo-card-label>
                <robo-card-label-section>Label</robo-card-label-section>
                <robo-card-label-section status="ok">Status</robo-card-label-section>
                <robo-card-label-section info>Here is some tip</robo-card-label-section>
-               <robo-card-label-section :select-options="['Option 1', 'Option 2']" :select-name="'example'" />
+               <robo-card-label-section :selectOptions="['Option 1', 'Option 2']" selectName="example" selectModel="Option 1" />
             </robo-card-label>
 
            <robo-card-section>
@@ -62,7 +80,7 @@
            </robo-card-section>
 
            <robo-card-section>
-               <robo-card-title>Section title</robo-card-title>
+               <robo-card-title>Section title size 1</robo-card-title>
                <robo-card-title size="2">Section title size 2</robo-card-title>
                <robo-card-title size="3">Section title size 3</robo-card-title>
            </robo-card-section>
@@ -71,7 +89,9 @@
                <robo-button>Submit</robo-button>
            </robo-card-section>
        </robo-card>
+
     </guide-section>
+
 
     <guide-section
       :title = "'Props for robo-card'"
@@ -79,12 +99,44 @@
 
     <Props>
       <tr>
-        <td>outlined</td>
-        <td>Boolean</td>
+        <td>backColor</td>
+        <td>String</td>
         <td></td>
-        <td>false</td>
+        <td>'light'</td>
+        <td>'light', 'dark', 'lightblue'</td>
+        <td>Цвет фона. Не актуально для 'outlined'</td>
+      </tr>
+      <tr>
+        <td>backImage</td>
+        <td>String</td>
         <td></td>
+        <td>null</td>
         <td></td>
+        <td>Путь до фонового изображения</td>
+      </tr>
+      <tr>
+        <td>backPosition</td>
+        <td>String</td>
+        <td></td>
+        <td>'100% 100%'</td>
+        <td>Значения для css свойства 'background-position'</td>
+        <td>Расположение фонового изображения</td>
+      </tr>
+      <tr>
+        <td>backRepeat</td>
+        <td>String</td>
+        <td></td>
+        <td>'no-repeat'</td>
+        <td>'no-repeat', 'repeat-x', 'repeat-y', 'repeat', 'space'</td>
+        <td>Расположение фонового изображения</td>
+      </tr>
+      <tr>
+        <td>backSize</td>
+        <td>String</td>
+        <td></td>
+        <td>'auto'</td>
+        <td>'contain', 'cover', 'auto'</td>
+        <td>Масштабирование фонового изображения</td>
       </tr>
       <tr>
         <td>disabled</td>
@@ -103,33 +155,20 @@
         <td></td>
       </tr>
       <tr>
+        <td>outlined</td>
+        <td>Boolean</td>
+        <td></td>
+        <td>false</td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
         <td>progress</td>
         <td>Number</td>
         <td></td>
         <td>null</td>
         <td>[0,100]</td>
         <td>0% - 100%</td>
-      </tr>
-      <tr>
-        <td>img-src</td>
-        <td>String</td>
-        <td></td>
-        <td>null</td>
-        <td></td>
-        <td>Full path to image for background</td>
-      </tr>
-      <tr>
-        <td>img-position</td>
-        <td>String</td>
-        <td></td>
-        <td>null</td>
-        <td>
-            <p>'right-botom'</p>
-            <p>'right-top'</p>
-            <p>'left-top'</p>
-            <p>'left-bottom'</p>
-        </td>
-        <td></td>
       </tr>
     </Props>
       
@@ -142,14 +181,6 @@
 
     <Props>
       <tr>
-        <td>status</td>
-        <td>String</td>
-        <td></td>
-        <td>null</td>
-        <td>'ok', 'error', 'na'</td>
-        <td>Сейчас различие в цветах. Можно использовать для статусов устройств и тп.</td>
-      </tr>
-      <tr>
         <td>info</td>
         <td>Boolean</td>
         <td></td>
@@ -158,7 +189,23 @@
         <td>Подсказка. В теге можно писать всё, что угодно, но лучше ограничиваться текстом не больше в несколько предложений.</td>
       </tr>
       <tr>
-        <td>select-options</td>
+        <td>selectModel</td>
+        <td>String</td>
+        <td></td>
+        <td>null</td>
+        <td></td>
+        <td>v-model for select</td>
+      </tr>
+      <tr>
+        <td>selectName</td>
+        <td>String</td>
+        <td></td>
+        <td>null</td>
+        <td></td>
+        <td>Тэг 'name' для селекта</td>
+      </tr>
+      <tr>
+        <td>selectOptions</td>
         <td>Array</td>
         <td></td>
         <td>null</td>
@@ -166,13 +213,16 @@
         <td>Возможность выбора каких-то опций (например, источник данных для даталога)</td>
       </tr>
       <tr>
-        <td>select-name</td>
+        <td>status</td>
         <td>String</td>
         <td></td>
         <td>null</td>
-        <td></td>
-        <td>Тэг 'name' для селекта</td>
+        <td>'ok', 'error', 'na'</td>
+        <td>Сейчас различие в цветах. Можно использовать для статусов устройств и тп.</td>
       </tr>
+      
+      
+      
     </Props>
       
     </guide-section>
@@ -195,6 +245,24 @@
       
     </guide-section>
 
+
+    <guide-section
+      :title = "'Props for robo-card-section'"
+    >
+
+    <Props>
+      <tr>
+        <td>maxWidth</td>
+        <td>String</td>
+        <td></td>
+        <td>null</td>
+        <td>любое css значение для max-width</td>
+        <td></td>
+      </tr>
+    </Props>
+      
+    </guide-section>
+
 </template>
 
 <script>
@@ -211,6 +279,13 @@ export default defineComponent({
             outlineSec: (this.outlined) ? ' outlined' : '',
             disabledSec: (this.disabled) ? ' disabled' : '',
             loadingSec: (this.loading) ? ' loading' : '',
+            colorBack: 'light',
+            image: false,
+            backSize: 'contain',
+            backRepeat: 'no-repeat',
+            backPosition: '100% 0',
+            imageCode: '',
+            colorCode: ' :backColor="light"'
         }
     },
 
@@ -236,6 +311,21 @@ export default defineComponent({
                 this.loadingSec = ''
             }
         },
+        image: function() {
+            if( this.image ) {
+                this.imageCode = ' :backImage="' + this.imageSrc + '" :backColor="' + this.colorBack + '" :backPosition="' + this.backPosition + '" :backRepeat="' + this.backRepeat + '" :backSize="' + this.backSize + '"' 
+            } else {
+                this.imageCode = ''
+            }
+        },
+
+        colorBack: function() {
+          if( this.colorBack ) {
+                this.colorCode = ` :backColor="${this.colorBack}"`
+            } else {
+                this.colorCode = ''
+            }
+        }
     },
 
     computed: {
@@ -250,12 +340,12 @@ export default defineComponent({
         '\t</robo-card-section>\n' +
         '</robo-card>' },
         code3: function() {
-            return '<robo-card img-src="images/card-back-sample.png"' + this.outlineSec + this.disabledSec + this.loadingSec + '>\n' +
+            return '<robo-card' + this.outlineSec + this.disabledSec + this.loadingSec + this.imageCode + this.colorCode + '>\n' +
                 '\t<robo-card-label>\n'+
                     '\t\t<robo-card-label-section>Label</robo-card-label-section>\n'+
                     '\t\t<robo-card-label-section status="ok">Status</robo-card-label-section>\n'+
                     '\t\t<robo-card-label-section info>Here is some tip</robo-card-label-section>\n'+
-                    '\t\t<robo-card-label-section :select="[' + `'` + 'Option 1' + `'` + ', ' + `'` + 'Option 2' + `'` + ']" />\n'+
+                    '\t\t<robo-card-label-section :select="[' + `'` + 'Option 1' + `'` + ', ' + `'` + 'Option 2' + `'` + ']" selectName="example" selectModel="Option 1"/>\n'+
                     '\t</robo-card-label>\n'+
                     '\t<robo-card-section>\n'+
                         '\t\t<robo-card-title>Section</robo-card-title>\n'+
@@ -270,6 +360,14 @@ export default defineComponent({
                         '\t\t<robo-button>Submit</robo-button>\n'+
                 '\t</robo-card-section>\n'+
             '</robo-card>'
+        },
+
+        imageSrc() {
+          if(this.image) {
+            return 'images/card-back-sample.png'
+          } else {
+            return null
+          }
         }
     }
 })

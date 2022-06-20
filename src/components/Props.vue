@@ -53,4 +53,6 @@ export default defineComponent({
         padding: 0;
         background: transparent;
     }
+
+    .props td:first-child { white-space: nowrap; }
 </style>

@@ -1,12 +1,6 @@
 <template>
     <h1>Sidebar</h1>
-    <guide-section
-      :title = "'Вступление'"
-    >
-      <p>Задумано для основного бокового меню</p>
-    </guide-section>
-
-    <use-component componentName="RoboSidebar, RoboSidebarItem"/>
+    <p>Задумано для основного бокового меню</p>
 
     <guide-section
       :title = "'Пример использования'"

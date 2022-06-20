@@ -1,8 +1,6 @@
 <template>
     <h1>Loaders</h1>
 
-    <use-component componentName="RoboLoader"/>
-
     <guide-section
       :title = "'Использование: лоадер по умолчанию'"
       :code = "code1" 
