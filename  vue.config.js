@@ -8,5 +8,8 @@ module.exports = {
                 vue: path.resolve(`./node_modules/vue`)
             }
         }
-    }
+    },
+    publicPath: process.env.NODE_ENV === 'production'
+    ? 'http://test.robonomics.network/'
+    : '/'
 };
