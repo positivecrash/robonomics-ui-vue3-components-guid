@@ -39,7 +39,20 @@ const store = createStore({
 
 export default store
       </code>
-      </pre></li>
+      </pre>
+      <p>И подключить в <code>main.js</code>:</p>
+      <pre v-highlightjs>
+        <code class="javascript">
+import store from "./store"
+
+const app = createApp(App)
+
+app
+    .use(store)
+    .use(robonomicsUI, { store })
+        </code>
+      </pre>
+      </li>
 
       <li>
         Подключить в ./main.js (пока подключение доступно только глобальное):
