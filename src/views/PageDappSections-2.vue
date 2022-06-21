@@ -13,14 +13,7 @@
                             <robo-card-label-section info>With this subscription you can interact with smart devices and robots via Robonomics parachain instead of centilized cloud services and providers.</robo-card-label-section>
                         </robo-card-label>
                         <robo-card-section>
-                            <!-- <robo-details summary-icon="circle-info" summary-text="tip">test</robo-details>
-                            <br/>
-                            <robo-details summary-text="i" button tooltip="bottom-start">
-                                With this subscription you can interact with smart devices and robots via Robonomics parachain instead of centilized cloud services and providers.
-                            </robo-details>
-                            <br/>
-                            <robo-details summary-text="popup" popup>popup</robo-details> -->
-
+                          
                             <robo-card-title>
                                 <robo-status 
                                     type="success"
@@ -34,16 +27,7 @@
                                 <robo-list-item>
                                     <robo-text weight="bold">
                                         Owner: 
-                                        <robo-account 
-                                            type="polkadot" 
-                                            status="ready" 
-                                            :accounts="['CbJzGu7WnL228wf4xsWcX4qrhGWGnRQM7BiYiPbygJwdvqd']"
-                                            name="accountSidebarPolkadot"
-                                            short
-                                            copy
-                                            clean
-                                            inline
-                                        />
+                                        <robo-account-polkadot short inline />
                                     </robo-text>
                                 </robo-list-item>    
                             </robo-list>

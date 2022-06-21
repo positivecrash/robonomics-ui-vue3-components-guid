@@ -84,14 +84,13 @@ createApp(App).use(RoboUi)
   <section>
     <h3>Примеры страниц</h3>
     <ul>
-      <li><router-link to="/page-dapp-loading">Dapp Loading</router-link></li>
-      <li><router-link to="/page-dapp-layout-loading">Dapp layout loading content</router-link></li>
-      <li><router-link to="/page-dapp-sections">Dapp sections test: dashboard no subscription</router-link></li>
-      <li><router-link to="/page-dapp-sections-2">Dapp sections test: dashboard with subscription</router-link></li>
-      <li><router-link to="/page-dapp-new-subsription">Dapp sections test: new subscription</router-link></li>
-      <li><router-link to="/page-dapp-subsription-manage">Dapp sections test: subscription manage</router-link></li>
-      <li><router-link to="/page-dapp-subsription-manage">Dapp sections test: subscription manage</router-link></li>
-      <li><router-link to="/page-dapp-devices">Dapp sections test: devices manage</router-link></li>
+      <li>Dapp loading: <router-link to="/page-dapp-loading">Example</router-link>, <a href="https://github.com/positivecrash/robonomics-ui-vue3-components-guide/blob/main/src/views/PageDappLoading.vue" target="_blank">Source</a></li>
+      <li>Layout content loading: <router-link to="/page-dapp-layout-loading">Example</router-link>, <a href="https://github.com/positivecrash/robonomics-ui-vue3-components-guide/blob/main/src/views/PageDappLayoutLoading.vue" target="_blank">Source</a></li>
+      <li>Dashboard, no subscription: <router-link to="/page-dapp-sections">Example</router-link>, <a href="https://github.com/positivecrash/robonomics-ui-vue3-components-guide/blob/main/src/views/PageDappSections.vue" target="_blank">Source</a></li>
+      <li>Dashboard, with subscription: <router-link to="/page-dapp-sections-2">Example</router-link>, <a href="https://github.com/positivecrash/robonomics-ui-vue3-components-guide/blob/main/src/views/PageDappSections-2.vue" target="_blank">Source</a></li>
+      <li>New subscription: <router-link to="/page-dapp-new-subsription">Example</router-link>, <a href="https://github.com/positivecrash/robonomics-ui-vue3-components-guide/blob/main/src/views/PageDappNewSubsription.vue" target="_blank">Source</a></li>
+      <li>Subscription manage: <router-link to="/page-dapp-subsription-manage">Example</router-link>, <a href="https://github.com/positivecrash/robonomics-ui-vue3-components-guide/blob/main/src/views/PageDappSubsriptionManage.vue" target="_blank">Source</a></li>
+      <li>Devices manage: <router-link to="/page-dapp-devices">Example</router-link>, <a href="https://github.com/positivecrash/robonomics-ui-vue3-components-guide/blob/main/src/views/PageDappDevices.vue" target="_blank">Source</a></li>
     </ul>
   </section>
 
