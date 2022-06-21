@@ -18,6 +18,7 @@ import PageDappSections2 from '../views/PageDappSections-2.vue'
 import PageDappNewSubsription from '../views/PageDappNewSubsription.vue'
 import PageDappSubsriptionManage from '../views/PageDappSubsriptionManage.vue'
 import PageDappDevices from '../views/PageDappDevices.vue'
+import Store from '../views/Store.vue'
 
 const routes = [
   {
@@ -139,6 +140,11 @@ const routes = [
     meta: {
       layout: 'Example'
     },
+  },
+  {
+    path: '/store',
+    name: 'Store',
+    component: Store
   },
 ]
 

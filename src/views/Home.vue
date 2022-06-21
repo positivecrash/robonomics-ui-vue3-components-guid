@@ -26,36 +26,10 @@ yarn add robonomics-ui-vue
       :title = "'Подготовка'"
     >
     <ol>
-      <li>Создать <code>./store.js</code>, если vuex не инициализировано в проекте:
-      <pre v-highlightjs>
-        <code class="javascript">
-import { createStore } from "vuex" 
-
-const store = createStore({
-   state:{
-      name: "Vue"
-   }
-})
-
-export default store
-      </code>
-      </pre>
-      <p>И подключить в <code>main.js</code>:</p>
-      <pre v-highlightjs>
-        <code class="javascript">
-import store from "./store"
-
-const app = createApp(App)
-
-app
-    .use(store)
-    .use(robonomicsUI, { store })
-        </code>
-      </pre>
-      </li>
+      <li><router-link to="/store">Подключить store</router-link></li>
 
       <li>
-        Подключить в ./main.js (пока подключение доступно только глобальное):
+        Подключить компоненты в ./main.js (пока подключение доступно только глобальное):
 <pre v-highlightjs>
 <code class="javascript">
 import { createApp } from 'vue'
