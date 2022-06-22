@@ -32,7 +32,8 @@
                             <robo-text size="small" weight="bold" gap>
                                 <robo-account-polkadot  
                                     short 
-                                    allowShiftExtensions
+                                    extensionAllowShift
+                                    extensionShowIcon
                                     selectable
                                 />
                             </robo-text>

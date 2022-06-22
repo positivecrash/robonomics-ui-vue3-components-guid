@@ -60,6 +60,14 @@
                                         v-model:address="modelInputTest"
                                         v-model:name="modelInputTest2"
                                         deviceInfoLink="/somelink?id=4GfqRUpa6i54YTTiSAYShFyQfRVPSYhTZ4RMK5naw31rGisd"
+                                        status="added"                                        
+                                        type="device"
+                                    />
+
+                                    <robo-template-subsription-item 
+                                        v-model:address="modelInputTest"
+                                        v-model:name="modelInputTest2"
+                                        deviceInfoLink="/somelink?id=4GfqRUpa6i54YTTiSAYShFyQfRVPSYhTZ4RMK5naw31rGisd"
                                         deviceIsOn
                                         status="added"                                        
                                         type="device"

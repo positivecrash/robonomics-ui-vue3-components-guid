@@ -39,7 +39,7 @@ app
 
 
     <guide-section
-      :title = "'Использование'"
+      :title = "'Использование значений'"
     >
         <ol>
             <li>
@@ -68,6 +68,68 @@ app
             </li>
         </ol>
     </guide-section>
+
+    <guide-section
+      :title = "'Установка значений'"
+    >
+        <ol>
+            <li>
+                <p><b>Текущий адрес polkadot</b></p>
+                <section>
+                    <pre v-highlightjs>
+                        <code class="javascript">
+$store.commit('robonomicsUIvue/setPolkadotAddress', this.testAddressSet, {root: true }) 
+                        </code>
+                    </pre>
+                </section>
+                <section>
+                    <p>Test: <input type="text" v-model="testAddressSet" @change="changeAddress"/></p>
+                    <i>{{$store.state.robonomicsUIvue.polkadot.address}}</i>
+                </section>
+            </li>
+            <li>
+                <p><b>Текущее расширение polkadot</b></p>
+                <section>
+                    <pre v-highlightjs>
+                        <code class="javascript">
+$store.commit('robonomicsUIvue/setPolkadotExtension', this.testExtension, {root: true }) 
+                        </code>
+                    </pre>
+                </section>
+                <section>
+                    <p>Test:
+                        <robo-select 
+                            v-model="testExtension"
+                            :options="['polkadot-js','talisman', 'subwallet-js']"
+                            @change="changeExtension"
+                        />
+                    </p>
+                    <i>{{$store.state.robonomicsUIvue.polkadot.extension}}</i>
+                </section>
+            </li>
+            <li>
+                <p><b>Chain polkadot для формата адреса пользователя</b></p>
+                <section>
+                    <pre v-highlightjs>
+                        <code class="javascript">
+$store.commit('robonomicsUIvue/setPolkadotChain', this.testChain, {root: true }) 
+                        </code>
+                    </pre>
+                </section>
+                <section>
+                    <p>Test:
+                        <robo-select 
+                            v-model="testChain"
+                            :values="['32','2', '0']"
+                            :options="['Robonomics', 'Kusama', 'Polkadot']"
+                            @change="changeChain"
+                        />
+                    </p>
+                    <i>{{$store.state.robonomicsUIvue.polkadot.chain}}</i>
+                </section>
+            </li>
+        </ol>
+    </guide-section>
 </template>
 
 <script>
@@ -75,5 +137,27 @@ import { defineComponent } from 'vue'
 
 export default defineComponent ({
   name: 'Store',
+
+  data() {
+      return {
+          testAddressSet: this.$store.state.robonomicsUIvue.polkadot.address ? this.$store.state.robonomicsUIvue.polkadot.address : '',
+          testExtension: 'polkadot-js',
+          testChain: 32
+      }
+  },
+
+  methods: {
+    changeAddress() {
+        this.$store.commit('robonomicsUIvue/setPolkadotAddress', this.testAddressSet, {root: true })
+    },
+
+    changeExtension() {
+        this.$store.commit('robonomicsUIvue/setPolkadotExtension', this.testExtension, {root: true }) 
+    },
+
+    changeChain() {
+        this.$store.commit('robonomicsUIvue/setPolkadotChain', this.testChain, {root: true })
+    }
+  }
 })
 </script>

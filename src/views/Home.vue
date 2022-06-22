@@ -54,6 +54,7 @@ createApp(App).use(RoboUi)
     <h3>Компоненты</h3>
 
     <ul>
+      <li><router-link to="/account-polkadot">Account Polkadot</router-link></li>
       <li><router-link to="/breadcrumbs">Breadcrumbs</router-link></li>
       <li><router-link to="/buttons">Button</router-link></li>
       <li><router-link to="/cards">Cards</router-link></li>

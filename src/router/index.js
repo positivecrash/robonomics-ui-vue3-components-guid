@@ -1,5 +1,6 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
 import Home from '../views/Home.vue'
+import AccountPolkadot from '../views/AccountPolkadot.vue'
 import Buttons from '../views/Buttons.vue'
 import Loaders from '../views/Loaders.vue'
 import Logo from '../views/Logo.vue'
@@ -25,6 +26,11 @@ const routes = [
     path: '/',
     name: 'Home',
     component: Home
+  },
+  {
+    path: '/account-polkadot',
+    name: 'AccountPolkadot',
+    component: AccountPolkadot
   },
   {
     path: '/buttons',

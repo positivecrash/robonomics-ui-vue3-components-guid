@@ -20,5 +20,9 @@
             <robo-sidebar-item href="https://app.uniswap.org/#/swap?inputCurrency=0x7de91b204c1c737bcee6f000aaa6569cf7061cb7&outputCurrency=0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2">Uniswap</robo-sidebar-item>
             <robo-sidebar-item href="https://robonomics.network/xrt/">About XRT</robo-sidebar-item>
         </robo-sidebar>
+
+        <robo-sidebar title="Tokenomics" icon="chart-pie">
+            <robo-sidebar-item :router="{ name: 'Home' }">Test router</robo-sidebar-item>
+        </robo-sidebar>
     </robo-grid-item>
 </template>
