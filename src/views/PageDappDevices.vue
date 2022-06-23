@@ -44,7 +44,7 @@
                             <robo-card-section>
 
                                 <robo-section offset="x1">
-                                    <robo-text>You may add here one of your robot - ROS-compatibale hardware or simulation model. <robo-link to="https://wiki.robonomics.network/docs/en/ros-smart-projects/">Learn more on WIKI</robo-link>. Control it and use datalog functions via blockchain with no transaction fees per block during the entire period of active subscription.</robo-text>
+                                    <robo-text>You may add here one of your robot - ROS-compatibale hardware or simulation model. <robo-link href="https://wiki.robonomics.network/docs/en/ros-smart-projects/">Learn more on WIKI</robo-link>. Control it and use datalog functions via blockchain with no transaction fees per block during the entire period of active subscription.</robo-text>
                                 </robo-section>
 
                                 <robo-section offset="x1">
@@ -103,7 +103,7 @@
         <robo-layout-footer>
             <robo-layout-section>
                 <robo-text size="small">
-                    Robonomics release v1.2.2 <robo-link to="https://github.com/airalab/robonomics/releases">View changelog</robo-link>
+                    Robonomics release v1.2.2 <robo-link href="https://github.com/airalab/robonomics/releases">View changelog</robo-link>
                 </robo-text>
             </robo-layout-section>
         </robo-layout-footer>

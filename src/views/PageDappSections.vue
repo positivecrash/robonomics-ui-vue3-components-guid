@@ -69,7 +69,7 @@
         <robo-layout-footer>
             <robo-layout-section>
                 <robo-text size="small">
-                    Robonomics release v1.2.2 <robo-link to="https://github.com/airalab/robonomics/releases">View changelog</robo-link>
+                    Robonomics release v1.2.2 <robo-link href="https://github.com/airalab/robonomics/releases">View changelog</robo-link>
                 </robo-text>
             </robo-layout-section>
         </robo-layout-footer>

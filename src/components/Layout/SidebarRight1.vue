@@ -77,9 +77,9 @@
                     <robo-card-section>
                         <robo-text size="small" weight="bold">
                             <robo-grid embed gap="x05">
-                                <robo-link to="https://github.com/airalab/dapp.robonomics.network/issues">Open issue on GitHub</robo-link>
-                                <robo-link to="https://wiki.robonomics.network/">Read Robonomics WIKI</robo-link>
-                                <robo-link to="https://discord.com/invite/5UWNGNaAUf">Chat in Discord</robo-link>
+                                <robo-link href="https://github.com/airalab/dapp.robonomics.network/issues">Open issue on GitHub</robo-link>
+                                <robo-link href="https://wiki.robonomics.network/">Read Robonomics WIKI</robo-link>
+                                <robo-link href="https://discord.com/invite/5UWNGNaAUf">Chat in Discord</robo-link>
                             </robo-grid>
                         </robo-text>
                     </robo-card-section>

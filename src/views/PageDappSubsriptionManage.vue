@@ -49,24 +49,55 @@
 
                                 <robo-section offset="x1">
 
-                                    <robo-template-subsription-item 
+                                    <!-- <robo-template-subsription-item 
                                         v-model:address="modelInputTest"
                                         v-model:name="modelInputTest2"
                                         @on-add="callbackAdded"
+                                    /> -->
+
+                                    <robo-template-subsription-item 
+                                        v-model:address="modelInputTest"
+                                        v-model:name="modelInputTest2"
+                                        @on-add="addItemSuccess"
+                                        @on-delete="deleteItem"
+
+                                        :tipName="tipName2"
                                     />
 
                                     <robo-template-subsription-item 
                                         v-model:address="modelInputTest"
                                         v-model:name="modelInputTest2"
+                                        @on-add="addItemError"
+
+                                        :tipName="tipName2"
+                                    />
+
+                                    <robo-template-subsription-item 
+                                        v-model:address="modelInputTest"
+                                        v-model:name="modelInputTest2"
+                                        @on-add="addItemErrorInput"
+
+                                        :tipName="tipName2"
+                                    />
+
+                                    
+
+                                    <robo-template-subsription-item 
+                                        v-model:address="modelInputTest"
+                                        v-model:name="modelInputTest2"
                                         status="loading"
+
+                                        :tipName="tipName2"
                                     />
 
                                     <robo-template-subsription-item 
                                         v-model:address="modelInputTest"
                                         v-model:name="modelInputTest2"
                                         status="added"
-                                        @on-delete="callbackDelete"
-                                        @on-cancel="callbackCancel"
+                                        @on-add="addItemSuccess"
+                                        @on-delete="deleteItem"
+
+                                        :tipName="tipName2"
                                     />
                                 </robo-section>
 
@@ -85,7 +116,7 @@
         <robo-layout-footer>
             <robo-layout-section>
                 <robo-text size="small">
-                    Robonomics release v1.2.2 <robo-link to="https://github.com/airalab/robonomics/releases">View changelog</robo-link>
+                    Robonomics release v1.2.2 <robo-link href="https://github.com/airalab/robonomics/releases">View changelog</robo-link>
                 </robo-text>
             </robo-layout-section>
         </robo-layout-footer>
@@ -122,7 +153,9 @@ export default defineComponent({
                 },
             ],
             modelInputTest: '4GfqRUpa6i54YTTiSAYShFyQfRVPSYhTZ4RMK5naw31rGisd',
-            modelInputTest2: "Account 1"
+            modelInputTest2: "Account 1",
+            tipName: "You may take custom name for the account by <a href='https://wiki.polkadot.network/docs/learn-identity' target='_blank'>setting an identity</a>",
+            tipName2: "The name will be saved only for this browser"
         }
     },
 
@@ -135,6 +168,46 @@ export default defineComponent({
         },
         callbackCancel() {
             console.log('CANCELL')
+        },
+
+        addItemSuccess(addStarted, addStatus) {
+            addStarted()
+            console.log('[Subscripbtion test]: addItem from parent')
+            
+            setTimeout(
+                function() {
+                    addStatus(true)
+                }
+            , 2000)
+        },
+        addItemError(addStarted, addStatus) {
+            addStarted()
+            console.log('[Subscripbtion test]: addItem from parent')
+            
+            setTimeout(
+                function(){
+                    addStatus(false, 'not added error message')
+                }
+            , 2000)
+        },
+        addItemErrorInput(addStarted, addStatus) {
+            addStarted()
+            setTimeout(
+                function(){
+                    addStatus(false, 'Check the address, incorrect format')
+                }
+            , 300)
+        },
+
+        deleteItem(deleteStarted, deleteStatus){
+            deleteStarted()
+            console.log('[Subscripbtion test]: deleteItem from parent')
+            
+            setTimeout(
+                function() {
+                    deleteStatus(true)
+                }
+            , 500)
         }
     }
 })
