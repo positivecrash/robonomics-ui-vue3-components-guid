@@ -7,7 +7,7 @@
                 <layout-sidebar-left />
 
                 <robo-grid-item>
-                    <robo-card>
+                    <robo-card allowExpand>
                         <robo-card-label>
                             <robo-card-label-section>Services</robo-card-label-section>
                             <robo-card-label-section info>
@@ -55,8 +55,8 @@
                                 </robo-template-services-item>
 
                                 <robo-template-services-item 
-                                    href="#"
-                                    picture="./images/services-kusama-parachain.jpg"
+                                    href="https://sensors.robonomics.network/#/"
+                                    picture="./images/services-sensors.jpg"
                                     :providers="[
                                     {
                                         name: 'Robonomics Core Team',
@@ -67,12 +67,70 @@
                                         link: 'https://airalab.org/en/'
                                     }
                                     ]"
-                                    title="Decentrilized sensors map"
+                                    title="Decentralized sensors map"
                                 >
-                                    Robonomics won parachain slot in Kusama. Kusama parachain 
-                                    is great opportunity for Robonomics to scale network up to 
-                                    1 million IoT systems connected in real-time without any 
-                                    centrilized regulators.
+                                    The Sensors Robonomics Network is a civilian network of sensors to monitor air quality. Anyone can build their own sensor or use an off-the-shelf solution from the development team and set it up in their home.
+                                </robo-template-services-item>
+
+
+                                <robo-template-services-item 
+                                    href="https://dapp.spot-sdk.education/#/"
+                                    picture="./images/services-spot.jpg"
+                                    :providers="[
+                                    {
+                                        name: 'Robonomics Core Team',
+                                        link: 'https://robonomics.network'
+                                    },
+                                    {
+                                        name: 'Merklebot',
+                                        link: 'https://merklebot.com'
+                                    }
+                                    ]"
+                                    title="Boston Dynamics Spot SDK lessons"
+                                >
+                                    Learn and practice with the Boston Dynamics Spot robot wherever you are. Get after each lesson captured video, robot movements recorded and printable PDF certificate.
+                                </robo-template-services-item>
+
+
+                                <robo-template-services-item 
+                                    href="https://telescope.merklebot.com/#/"
+                                    picture="./images/services-telescope.jpg"
+                                    :providers="[
+                                    {
+                                        name: 'Robonomics Core Team',
+                                        link: 'https://robonomics.network'
+                                    },
+                                    {
+                                        name: 'Merklebot',
+                                        link: 'https://merklebot.com'
+                                    }
+                                    ]"
+                                    title="The autonomous telescope mints NFT"
+                                >
+                                    Connect to the autonomous telescope in the dark night of Atacama desert in Chile, select an astronomical object and mint unique NFTs in a few clicks.
+                                </robo-template-services-item>
+
+
+                                <robo-template-services-item 
+                                    href="https://dapp.ipci.io/#/offsetting"
+                                    picture="./images/services-offsetting.jpg"
+                                    :providers="[
+                                    {
+                                        name: 'Robonomics Core Team',
+                                        link: 'https://robonomics.network'
+                                    },
+                                    {
+                                        name: 'DAO IPCI',
+                                        link: 'https://ipci.io/'
+                                    },
+                                    {
+                                        name: 'Evercity',
+                                        link: 'https://www.evercity.io/'
+                                    },
+                                    ]"
+                                    title="The autonomous telescope mints NFT"
+                                >
+                                    Carbon footprint clearance for smart buildings based on geolocation and energy consumption information.
                                 </robo-template-services-item>
 
                             </robo-grid>
