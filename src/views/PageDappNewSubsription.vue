@@ -124,7 +124,6 @@ export default defineComponent({
                 href: 'subscription',
                 },
             ],
-            chainformat: 'Robonomics',
             plan: '1 month'
         }
     },

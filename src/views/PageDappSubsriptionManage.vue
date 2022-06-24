@@ -48,13 +48,7 @@
                                 </robo-section>
 
                                 <robo-section offset="x1">
-
-                                    <!-- <robo-template-subsription-item 
-                                        v-model:address="modelInputTest"
-                                        v-model:name="modelInputTest2"
-                                        @on-add="callbackAdded"
-                                    /> -->
-
+                                    
                                     <robo-template-subsription-item 
                                         v-model:address="modelInputTest"
                                         v-model:name="modelInputTest2"
@@ -80,8 +74,6 @@
                                         :tipName="tipName2"
                                     />
 
-                                    
-
                                     <robo-template-subsription-item 
                                         v-model:address="modelInputTest"
                                         v-model:name="modelInputTest2"
@@ -99,6 +91,32 @@
 
                                         :tipName="tipName2"
                                     />
+
+                                    <robo-template-subsription-item 
+                                        v-model:address="modelInputTest"
+                                        v-model:name="modelInputTest2"
+                                        :status="statusChangeTest"
+                                        @on-add="addItemSuccess"
+                                        @on-delete="deleteItem"
+                                        :key="itemKey"
+
+                                        :tipName="tipName2"
+
+                                        :disabled="ChangeTest"
+                                    />
+
+                                    <select v-model="statusChangeTest">
+                                        <option value="new">new</option>
+                                        <option value="added">added</option>
+                                        <option value="loading">loading</option>
+                                        <option value="deleted">deleted</option>
+                                    </select>
+
+                                    <select v-model="ChangeTest">
+                                        <option :value="true">true</option>
+                                        <option :value="false">false</option>
+                                    </select>
+
                                 </robo-section>
 
 
@@ -155,20 +173,20 @@ export default defineComponent({
             modelInputTest: '4GfqRUpa6i54YTTiSAYShFyQfRVPSYhTZ4RMK5naw31rGisd',
             modelInputTest2: "Account 1",
             tipName: "You may take custom name for the account by <a href='https://wiki.polkadot.network/docs/learn-identity' target='_blank'>setting an identity</a>",
-            tipName2: "The name will be saved only for this browser"
+            tipName2: "The name will be saved only for this browser",
+            statusChangeTest: 'new',
+            ChangeTest: false,
+            itemKey: 0
+        }
+    },
+
+    watch: {
+        statusChangeTest: function() {
+            this.itemKey += 1
         }
     },
 
     methods: {
-        callbackAdded() {
-            console.log('ADD')
-        },
-        callbackDelete() {
-            console.log('DELETE')
-        },
-        callbackCancel() {
-            console.log('CANCELL')
-        },
 
         addItemSuccess(addStarted, addStatus) {
             addStarted()
@@ -200,6 +218,7 @@ export default defineComponent({
         },
 
         deleteItem(deleteStarted, deleteStatus){
+            console.log('TEST')
             deleteStarted()
             console.log('[Subscripbtion test]: deleteItem from parent')
             

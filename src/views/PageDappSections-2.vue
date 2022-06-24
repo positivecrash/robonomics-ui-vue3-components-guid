@@ -31,7 +31,8 @@
                                     </robo-text>
                                 </robo-list-item>    
                             </robo-list>
-                            <robo-button href="/subscription" icon-left="rss">Manage subscription</robo-button>
+                            <!-- <robo-button href="/subscription" icon-left="rss">Manage subscription</robo-button> -->
+                            <robo-button :router="{ name: 'Home', path: '/' }" icon-left="rss">Manage subscription</robo-button>
                         </robo-card-section>
                     </robo-card>
 
