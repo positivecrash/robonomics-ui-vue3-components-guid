@@ -21,6 +21,7 @@ import PageDappSubsriptionManage from '../views/PageDappSubsriptionManage.vue'
 import PageDappDevices from '../views/PageDappDevices.vue'
 import PageServices from '../views/PageServices.vue'
 import PageServiceLightsUp from '../views/PageServiceLightsUp.vue'
+import PageServiceHomeAssistant from '../views/PageServiceHomeAssistant.vue'
 import Store from '../views/Store.vue'
 
 const routes = [
@@ -161,6 +162,14 @@ const routes = [
     path: '/page-services-lights-up',
     name: 'PageServiceLightsUp',
     component: PageServiceLightsUp,
+    meta: {
+      layout: 'Example'
+    },
+  },
+  {
+    path: '/page-services-home-assistant',
+    name: 'PageServiceHomeAssistant',
+    component: PageServiceHomeAssistant,
     meta: {
       layout: 'Example'
     },
