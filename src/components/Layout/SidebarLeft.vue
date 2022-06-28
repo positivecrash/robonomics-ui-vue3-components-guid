@@ -2,6 +2,7 @@
     <robo-grid-item media-mobile="collapse-left" collapse-text="Navigation">
         <robo-sidebar title="Dapp" icon="house">
             <robo-sidebar-item href="/" current>Dashboard</robo-sidebar-item>
+            <robo-sidebar-item href="#">Old version</robo-sidebar-item>
             <robo-sidebar-item href="/settings">Settings</robo-sidebar-item>
         </robo-sidebar>
 

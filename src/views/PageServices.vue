@@ -27,7 +27,7 @@
                             <robo-grid columnsRepeat="3" offset="x0">
 
                                 <robo-template-services-item 
-                                    href="#"
+                                    :router="{ name: 'Home' }"
                                     label="demo"
                                     picture="./images/services-lights-up.jpg"
                                     :providers="[{

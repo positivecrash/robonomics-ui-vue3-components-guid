@@ -25,8 +25,10 @@
 
                                 <robo-list-item>
                                     <robo-card-title size="3">Get Home Assistant password:</robo-card-title>
+                                    <robo-text weight="bold">crypted password:</robo-text>
+                                   <robo-text break gap size="small">0x7e83fae1d7b29a6c531a527880dfc0a7e0b8432ef7b5cdd4cf9420b84475326a6be0ad3a86bf8353c22420ea678632214150</robo-text>
                                     <robo-text weight="light">Enter your seed phrase to decrypt the password:</robo-text>
-                                    <robo-textarea placeholder="Place your test seed here" offset="x1" />
+                                    <robo-textarea placeholder="Place your test seed here" offset="x1" v-model="seed" />
                                     <robo-button outlined>Decrypt password</robo-button>
                                 </robo-list-item>
 
@@ -34,10 +36,10 @@
                                     <robo-card-title size="3">Sign in your Home assistant account using autorization link:</robo-card-title>
 
                                     <robo-text weight="bold">login:</robo-text>
-                                    <robo-text gap><robo-account-polkadot copy /></robo-text>
+                                    <robo-text gap size="small"><robo-account-polkadot copy /></robo-text>
 
                                     <robo-text weight="bold">password:</robo-text>
-                                    <robo-text break copy gap>0x7e83fae1d7b29a6c531a527880dfc0a7e0b8432ef7b5cdd4cf9420b84475326a6be0ad3a86bf8353c22420ea678632214150</robo-text>
+                                    <robo-text break copy gap size="small">0x7e83fae1d7b29a6c531a527880dfc0a7e0b8432ef7b5cdd4cf9420b84475326a6be0ad3a86bf8353c22420ea678632214150</robo-text>
 
                                     <robo-text gap><robo-link href="#">Sign in Home Assistant</robo-link></robo-text>
                                 </robo-list-item>
@@ -94,7 +96,8 @@ export default defineComponent({
                 active: true,
                 href: 'home-assistant-account',
                 },
-            ]
+            ],
+            seed: ''
         }
     },
 })
