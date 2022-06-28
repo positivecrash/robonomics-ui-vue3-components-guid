@@ -31,7 +31,27 @@
 
                                     <robo-list-item>
                                         <robo-card-title size="3">Get IoT Subscription:</robo-card-title>
+
+                                        <!-- + If no subscription -->
+                                        <robo-text size="big" weight="bold">
+                                            <robo-status 
+                                                type="warning"
+                                                textRight="No active subscription"
+                                            />
+                                        </robo-text>
                                         <robo-text>Ask the <robo-link href="#">@robonomics_free_rws</robo-link> Telegram bot to add your account to the Workshop IoT Subscription</robo-text>
+                                        <!-- - If no subscription -->
+
+                                        <!-- + If subscription ok -->
+                                        <robo-text size="big" weight="bold">
+                                            <robo-status 
+                                                type="success"
+                                                textRight="Your Workshop IoT Subscription is active"
+                                            />
+                                        </robo-text>
+                                        <robo-text><robo-link href="#">@robonomics_free_rws</robo-link></robo-text>
+                                        <!-- - If subscription ok -->
+
                                     </robo-list-item>
 
                                     <robo-list-item>
