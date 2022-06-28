@@ -56,7 +56,7 @@
 
                                     <robo-list-item>
                                         <robo-card-title size="3">Choose any color you like:</robo-card-title>
-                                        <robo-input inputType="color" v-model="colorLightUp" />
+                                        <robo-input type="color" v-model="colorLightUp" />
                                     </robo-list-item>
 
                                     <robo-list-item>
