@@ -88,6 +88,7 @@
                                         status="added"
                                         @on-add="addItemSuccess"
                                         @on-delete="deleteItem"
+                                        @on-edit="editItem"
 
                                         :tipName="tipName2"
                                     />
@@ -98,7 +99,7 @@
                                         :status="statusChangeTest"
                                         @on-add="addItemSuccess"
                                         @on-delete="deleteItem"
-                                        :key="itemKey"
+                                        @on-edit="editItem2"
 
                                         :tipName="tipName2"
 
@@ -175,14 +176,7 @@ export default defineComponent({
             tipName: "You may take custom name for the account by <a href='https://wiki.polkadot.network/docs/learn-identity' target='_blank'>setting an identity</a>",
             tipName2: "The name will be saved only for this browser",
             statusChangeTest: 'new',
-            ChangeTest: false,
-            itemKey: 0
-        }
-    },
-
-    watch: {
-        statusChangeTest: function() {
-            this.itemKey += 1
+            ChangeTest: false
         }
     },
 
@@ -225,6 +219,30 @@ export default defineComponent({
             setTimeout(
                 function() {
                     deleteStatus(true)
+                }
+            , 500)
+        },
+
+        editItem(editStarted, editStatus) {
+
+            editStarted()
+            console.log('[Subscripbtion test]: some actions for saving edit')
+
+            setTimeout(
+                function() {
+                    editStatus(false, 'no connection')
+                }
+            , 500)
+        },
+
+        editItem2(editStarted, editStatus) {
+
+            editStarted()
+            console.log('[Subscripbtion test]: some actions for saving edit')
+
+            setTimeout(
+                function() {
+                    editStatus(true)
                 }
             , 500)
         }
