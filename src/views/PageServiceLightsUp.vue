@@ -62,6 +62,7 @@
                                     <robo-list-item>
                                         <robo-card-title size="3">Sign and send a transaction to the Robonomics Parachain:</robo-card-title>
                                         <robo-button>Submit a transaction</robo-button>
+                                        <robo-button disabled="ok" iconLeft="check">Transaction submitted</robo-button>
                                     </robo-list-item>
                                 </robo-list>
 

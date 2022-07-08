@@ -30,7 +30,11 @@
                                             Owner: 
                                             <robo-account-polkadot short inline />
                                         </robo-text>
-                                    </robo-list-item>    
+                                        
+                                        <robo-account-polkadot />
+                                        <robo-account-polkadot chain="0" />
+                                        <robo-account-polkadot chain="0" addressIsolated="15CzEmZRy5Az2YNADEEuweXVe8XxaHbxHJjVZcd9rGuHuPCg" />
+                                    </robo-list-item>
                                 </robo-list>
                             </robo-card-section>
                         </robo-card>

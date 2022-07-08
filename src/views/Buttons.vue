@@ -57,7 +57,7 @@
       :title = "'Использование: disabled'"
       :code = "code7" 
     >
-      <robo-button disabled="disabled">Save</robo-button> <robo-button disabled="ok">Saved</robo-button> <robo-button disabled="alarm">Not saved</robo-button> <robo-button disabled="disabled" outlined>Save</robo-button> <robo-button disabled="ok" outlined>Saved</robo-button> <robo-button disabled="alarm" outlined>Not saved</robo-button>
+      <robo-button disabled>Save</robo-button> <robo-button disabled="disabled">Save</robo-button> <robo-button disabled="ok">Saved</robo-button> <robo-button disabled="alarm">Not saved</robo-button> <robo-button disabled="disabled" outlined>Save</robo-button> <robo-button disabled="ok" outlined>Saved</robo-button> <robo-button disabled="alarm" outlined>Not saved</robo-button>
     </guide-section>
 
     <guide-section
@@ -221,7 +221,7 @@ export default defineComponent ({
       code4: '<robo-button type="alarm">Alarm button</robo-button>',
       code5: '<robo-button type="na">n/a button</robo-button>',
       code6: '<robo-button outlined>Button</robo-button> <robo-button type="ok" outlined>Success button</robo-button> <robo-button type="alarm" outlined>Alarm button</robo-button> <robo-button type="na" outlined>n/a button</robo-button>',
-      code7: '<robo-button disabled="disabled">Save</robo-button> <robo-button disabled="ok">Saved</robo-button> <robo-button disabled="alarm">Not saved</robo-button> <robo-button disabled="disabled" outlined>Save</robo-button> <robo-button disabled="success" outlined>Saved</robo-button> <robo-button disabled="error" outlined>Not saved</robo-button>',
+      code7: '<robo-button disabled>Save</robo-button> <robo-button disabled="disabled">Save</robo-button> <robo-button disabled="ok">Saved</robo-button> <robo-button disabled="alarm">Not saved</robo-button> <robo-button disabled="disabled" outlined>Save</robo-button> <robo-button disabled="success" outlined>Saved</robo-button> <robo-button disabled="error" outlined>Not saved</robo-button>',
       code8: '<robo-button block>Button</robo-button>',
       code9: '<robo-button size="small">Button</robo-button> <robo-button>Button</robo-button> <robo-button size="big">Button</robo-button>',
       code10: '<robo-button right=".JSON" outlined>Download all</robo-button>',

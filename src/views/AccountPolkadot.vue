@@ -65,6 +65,19 @@ Polkadot: '0',
     </guide-section>
 
 
+    <robo-account-polkadot  
+        short 
+        extensionAllowShift
+        extensionShowIcon
+        selectable
+    />
+    
+    <robo-account-polkadot short inline />
+    <robo-account-polkadot />
+    <robo-account-polkadot chain="0" />
+    <robo-account-polkadot chain="0" addressIsolated="15CzEmZRy5Az2YNADEEuweXVe8XxaHbxHJjVZcd9rGuHuPCg" extensionAllowShift extensionShowIcon />
+
+
     <guide-section
       :title = "'Установка значений'"
     >

@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-   
+
     <guide-section
       :title = "'Установка'"
     >

@@ -53,11 +53,28 @@
         <robo-logo title animate />
     </guide-section>
 
+    <guide-section
+      :title = "'Использование: ссылка как router'"
+      :code = "code7" 
+    >
+        <robo-logo title animate :router="{ name: 'Home' }" />
+    </guide-section>
+
      <guide-section
       :title = "'Props'"
     >
 
     <Props>
+      <tr>
+        <td>animate</td>
+        <td>Boolean</td>
+        <td></td>
+        <td>false</td>
+        <td></td>
+        <td>
+          <p>Бесконечная анимация логотипа, можно использовать для лоадера всего приложения или раздела. Работает для всех вариаций.</p>
+        </td>
+      </tr>
       <tr>
         <td>href</td>
         <td>String</td>
@@ -68,14 +85,24 @@
           <p>Ссылка для всего блока логотипа</p>
         </td>
       </tr>
-        <tr>
-        <td>vertical</td>
+      <tr>
+        <td>light</td>
         <td>Boolean</td>
         <td></td>
         <td>false</td>
         <td></td>
         <td>
-          <p>Вертикальное позиционирование. Это свойство имеет смысл в связке с <code>title</code></p>
+          <p>Делает логотип светлым</p>
+        </td>
+      </tr>
+      <tr>
+        <td>router</td>
+        <td>[Object,String]</td>
+        <td></td>
+        <td>null</td>
+        <td></td>
+        <td>
+          <p>Ссылка для всего блока логотипа, router-link</p>
         </td>
       </tr>
       <tr>
@@ -89,25 +116,16 @@
         </td>
       </tr>
       <tr>
-        <td>animate</td>
+        <td>vertical</td>
         <td>Boolean</td>
         <td></td>
         <td>false</td>
         <td></td>
         <td>
-          <p>Бесконечная анимация логотипа, можно использовать для лоадера всего приложения или раздела. Работает для всех вариаций.</p>
+          <p>Вертикальное позиционирование. Это свойство имеет смысл в связке с <code>title</code></p>
         </td>
       </tr>
-      <tr>
-        <td>light</td>
-        <td>Boolean</td>
-        <td></td>
-        <td>false</td>
-        <td></td>
-        <td>
-          <p>Делает логотип светлым</p>
-        </td>
-      </tr>
+    
     </Props>
       
     </guide-section>
@@ -127,6 +145,7 @@ export default defineComponent ({
       code4: '<robo-logo />',
       code5: '<robo-logo animate />',
       code6: '<robo-logo title animate />',
+      code7: '<robo-logo title animate :router="{ name: `Home` }" />',
     }
   },
 })
