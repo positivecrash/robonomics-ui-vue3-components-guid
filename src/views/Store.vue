@@ -79,6 +79,7 @@ app
         </ol>
     </guide-section>
 
+
     <guide-section
       :title = "'Установка значений'"
     >
