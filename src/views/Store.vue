@@ -66,6 +66,16 @@ app
                     <i>{{$store.state.robonomicsUIvue.polkadot.chain}}</i>
                 </section>
             </li>
+            <li>
+                <p><b>Аккаунты Polkadot из подключенного расширения</b></p>
+                <p>При установке записывается в localStorage <code>robonomicsUIPolkadotAccounts</code> в виде строки</p>
+                <section>
+                    <pre v-highlightjs><code class="javascript">$store.state.robonomicsUIvue.polkadot.accounts</code></pre>
+
+                    <p v-if="$store.state.robonomicsUIvue.polkadot.accounts">{{ $store.state.robonomicsUIvue.polkadot.accounts }}</p>
+                    <p v-else><robo-account-polkadot extensionAllowShift extensionShowIcon short /></p>
+                </section>
+            </li>
         </ol>
     </guide-section>
 
@@ -125,6 +135,7 @@ $store.commit('robonomicsUIvue/setPolkadotChain', this.testChain, {root: true })
                             @change="changeChain"
                         />
                     </p>
+
                     <i>{{$store.state.robonomicsUIvue.polkadot.chain}}</i>
                 </section>
             </li>
@@ -158,6 +169,11 @@ export default defineComponent ({
     changeChain() {
         this.$store.commit('robonomicsUIvue/setPolkadotChain', this.testChain, {root: true })
     }
+  },
+
+  mounted() {
+    console.log('!mounted')
+    console.log('! accounts', this.$store.state.robonomicsUIvue.polkadot.accounts)
   }
 })
 </script>

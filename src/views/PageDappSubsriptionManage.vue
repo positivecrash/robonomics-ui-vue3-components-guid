@@ -30,11 +30,13 @@
                                             Owner: 
                                             <robo-account-polkadot short inline />
                                         </robo-text>
-                                        
-                                        <robo-account-polkadot />
-                                        <robo-account-polkadot chain="0" />
-                                        <robo-account-polkadot chain="0" addressIsolated="15CzEmZRy5Az2YNADEEuweXVe8XxaHbxHJjVZcd9rGuHuPCg" />
                                     </robo-list-item>
+
+                                    <robo-account-polkadot />
+                                    <robo-account-polkadot selectable chain="0"/>
+                                    <robo-account-polkadot chain="0" short />
+                                    <robo-account-polkadot addressLocal="15CzEmZRy5Az2YNADEEuweXVe8XxaHbxHJjVZcd9rGuHuPCg" chain="0" short/>
+                                    <robo-account-polkadot addressLocal="15CzEmZRy5Az2YNADEEuweXVe8XxaHbxHJjVZcd9rGuHuPCg" addressLocalAllowEdit chain="32" />
                                 </robo-list>
                             </robo-card-section>
                         </robo-card>

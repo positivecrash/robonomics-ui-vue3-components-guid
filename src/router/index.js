@@ -23,6 +23,7 @@ import PageServices from '../views/PageServices.vue'
 import PageServiceLightsUp from '../views/PageServiceLightsUp.vue'
 import PageServiceHomeAssistant from '../views/PageServiceHomeAssistant.vue'
 import Store from '../views/Store.vue'
+import Changelog from '../views/Changelog.vue'
 
 const routes = [
   {
@@ -178,6 +179,11 @@ const routes = [
     path: '/store',
     name: 'Store',
     component: Store
+  },
+  {
+    path: '/changelog',
+    name: 'Changelog',
+    component: Changelog
   },
 ]
 

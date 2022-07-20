@@ -28,7 +28,7 @@
   }
 
 .layout-guide section {
-    margin: 3rem auto;
+    margin: 4rem auto;
 }
 
 .layout-guide section section {
@@ -49,4 +49,29 @@
 .layout-guide h4 {
     text-align: center;
     }
+
+.label-example {
+    display: block;
+    white-space: nowrap;
+}
+
+.label-example input[type=text], .label-example select {
+    background: #fff;
+    display: inline-block;
+}
+code {
+  background: rgb(200, 218, 250);
+  padding: 2px;
+  margin: 2px;
+ }
+
+ .label-example > *:not(:last-child) {
+    margin-right: 10px;
+ }
+ 
+ blockquote {
+    background-color: aliceblue;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+ }
 </style>

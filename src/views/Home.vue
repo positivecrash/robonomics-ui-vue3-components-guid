@@ -1,6 +1,8 @@
 <template>
   <div class="home">
 
+    <h2><router-link to="/changelog">! ChangeLog</router-link></h2>
+
     <guide-section
       :title = "'Установка'"
     >
