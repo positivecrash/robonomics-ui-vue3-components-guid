@@ -67,6 +67,16 @@ app
                 </section>
             </li>
             <li>
+                <p><b>Подключенные расширения Polkadot</b></p>
+                <p>При установке записывается в localStorage <code>robonomicsUIPolkadotExtensionsList</code> в виде строки</p>
+                <section>
+                    <pre v-highlightjs><code class="javascript">$store.state.robonomicsUIvue.polkadot.extensionsList</code></pre>
+
+                    <p v-if="$store.state.robonomicsUIvue.polkadot.extensionsList">{{ $store.state.robonomicsUIvue.polkadot.extensionsList }}</p>
+                    <p v-else>no extensions</p>
+                </section>
+            </li>
+            <li>
                 <p><b>Аккаунты Polkadot из подключенного расширения</b></p>
                 <p>При установке записывается в localStorage <code>robonomicsUIPolkadotAccounts</code> в виде строки</p>
                 <section>
@@ -173,8 +183,7 @@ export default defineComponent ({
   },
 
   mounted() {
-    console.log('!mounted')
-    console.log('! accounts', this.$store.state.robonomicsUIvue.polkadot.accounts)
+    console.log('extensionsList', this.$store.state.robonomicsUIvue.polkadot.extensionsList)
   }
 })
 </script>

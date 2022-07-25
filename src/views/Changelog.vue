@@ -2,6 +2,18 @@
     <h1>Changelog</h1>
 
     <guide-section
+      title = "0.0.1-24"
+    >
+    <ol>
+        <li>
+            <h4>Added extensions object list <router-link to="account-polkadot">robo-account-polkadot</router-link></h4>
+            <p>Vuex - <code>$store.state.robonomicsUIvue.polkadot.extensionsList</code></p>
+            <p>localStorage - <code>robonomicsUIPolkadotExtensionsList</code></p>
+        </li>
+    </ol>
+    </guide-section>
+
+    <guide-section
       title = "0.0.1-23"
     >
     <ol>
