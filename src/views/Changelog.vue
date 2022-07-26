@@ -2,6 +2,24 @@
     <h1>Changelog</h1>
 
     <guide-section
+      title = "0.0.1-25"
+    >
+    <ol>
+        <li>
+            <h4>Extension object <router-link to="account-polkadot">robo-account-polkadot</router-link></h4>
+            <ul>
+                <li>Removed <code>$store.state.robonomicsUIvue.polkadot.extensionsList</code></li>
+                <li>
+                    <p>Added current extension's object</p>
+                    vuex - <code>$store.state.robonomicsUIvue.polkadot.extensionObj</code><br/>
+                    localStorage - <code>robonomicsUIPolkadotExtensionObj</code>
+                </li>
+            </ul>
+        </li>
+    </ol>
+    </guide-section>
+
+    <guide-section
       title = "0.0.1-24"
     >
     <ol>

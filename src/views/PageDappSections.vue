@@ -104,5 +104,28 @@ export default defineComponent({
             chainformat: 'Robonomics'
         }
     },
+
+    /* + TO TEST SIGN */
+
+    // watch: {
+    //     "$store.state.robonomicsUIvue.polkadot.extensionObj": async function(value) {
+
+    //         const signer = this.$store.state.robonomicsUIvue.polkadot.extensionObj.signer
+    //         const addr = this.$store.state.robonomicsUIvue.polkadot.address
+
+    //         try {
+    //             // Triggers the extension popup
+    //             await signer.signRaw({
+    //                 type: 'payload',
+    //                 data: 'Some data to sign...',
+    //                 address: addr,
+    //             })
+    //         } catch (err) {
+    //             console.log(err)
+    //         }
+    //     }
+    // }
+
+     /* - TO TEST SIGN */
 })
 </script>

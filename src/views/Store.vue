@@ -67,13 +67,13 @@ app
                 </section>
             </li>
             <li>
-                <p><b>Подключенные расширения Polkadot</b></p>
-                <p>При установке записывается в localStorage <code>robonomicsUIPolkadotExtensionsList</code> в виде строки</p>
+                <p><b>Объект с методами подключенного расширения Polkadot</b></p>
+                <p>При установке записывается в localStorage <code>robonomicsUIPolkadotExtensionObj</code> в виде строки. Устанавливается каждый раз, когда обновляется список аккаунтов.</p>
                 <section>
-                    <pre v-highlightjs><code class="javascript">$store.state.robonomicsUIvue.polkadot.extensionsList</code></pre>
+                    <pre v-highlightjs><code class="javascript">$store.state.robonomicsUIvue.polkadot.extensionObj</code></pre>
 
-                    <p v-if="$store.state.robonomicsUIvue.polkadot.extensionsList">{{ $store.state.robonomicsUIvue.polkadot.extensionsList }}</p>
-                    <p v-else>no extensions</p>
+                    <p v-if="$store.state.robonomicsUIvue.polkadot.extensionObj">{{ $store.state.robonomicsUIvue.polkadot.extensionObj }}</p>
+                    <p v-else>no extension object</p>
                 </section>
             </li>
             <li>
@@ -180,10 +180,6 @@ export default defineComponent ({
     changeChain() {
         this.$store.commit('robonomicsUIvue/setPolkadotChain', this.testChain, {root: true })
     }
-  },
-
-  mounted() {
-    console.log('extensionsList', this.$store.state.robonomicsUIvue.polkadot.extensionsList)
   }
 })
 </script>
