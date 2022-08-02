@@ -3,6 +3,23 @@
 
 
     <guide-section
+      title = "0.0.1-28"
+    >
+    <ol>
+        <li>
+            <h4>Fixes & improvements <router-link to="account-polkadot">robo-account-polkadot</router-link></h4>
+            <ul>
+                <li>Added Nova wallet & 'wallet' vuex state</li>
+                <li>Added Info element (to turn it off use prop <code>:info="false"</code>)</li>
+                <li>Fixed layout for narrow screens</li>
+                <li>Fixed tooltip position</li>
+                <li>Fixed long string address view</li>
+            </ul>
+        </li>
+    </ol>
+    </guide-section>
+    
+    <guide-section
       title = "0.0.1-25"
     >
     <ol>

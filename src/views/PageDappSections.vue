@@ -8,11 +8,13 @@
 
                 <robo-grid-item>
                     <robo-card backColor="lightblue" backImage="images/card-back-sample.png" backPosition="100% 100%" backSize="contain">
+                        
                         <robo-card-label>
                             <robo-card-label-section>Your subscription</robo-card-label-section>
                             <robo-card-label-section info>With this subscription you can interact with smart devices and robots via Robonomics parachain instead of centilized cloud services and providers.</robo-card-label-section>
                         </robo-card-label>
-                        <robo-card-section maxWidth="80%">
+                        <!-- <robo-card-section maxWidth="80%"> -->
+                        <robo-card-section>
                             <robo-card-title>Use Decentralized IoT</robo-card-title>
                             <!-- <div style="display:flex;gap:calc(var(--space)*4);margin-bottom:calc(var(--space)*2);">
                                 <div>
@@ -47,7 +49,7 @@
                         </robo-card-section>
                     </robo-card>
 
-                    <robo-grid columnsRepeat="2">
+                    <robo-grid columnsRepeat="2" mediaMobile="transfer">
                         <robo-card>
                             <robo-card-title size="2">For holders of parachain XRT</robo-card-title>
                             <robo-section>Bond your XRT in Robonomics parachain and earn approx. 10% annual revenue.</robo-section>
@@ -105,27 +107,5 @@ export default defineComponent({
         }
     },
 
-    /* + TO TEST SIGN */
-
-    // watch: {
-    //     "$store.state.robonomicsUIvue.polkadot.extensionObj": async function(value) {
-
-    //         const signer = this.$store.state.robonomicsUIvue.polkadot.extensionObj.signer
-    //         const addr = this.$store.state.robonomicsUIvue.polkadot.address
-
-    //         try {
-    //             // Triggers the extension popup
-    //             await signer.signRaw({
-    //                 type: 'payload',
-    //                 data: 'Some data to sign...',
-    //                 address: addr,
-    //             })
-    //         } catch (err) {
-    //             console.log(err)
-    //         }
-    //     }
-    // }
-
-     /* - TO TEST SIGN */
 })
 </script>

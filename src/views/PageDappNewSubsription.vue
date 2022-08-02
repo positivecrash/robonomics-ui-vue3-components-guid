@@ -33,7 +33,7 @@
                                     <robo-text weight="light" size="tiny">[Polkadot ecosystem]</robo-text>
                                     <!-- {{$store.state.robonomicsUIvue.polkadot.address}} -->
                                     <robo-text gap size="medium" highlight="link">
-                                        <robo-account-polkadot short />
+                                        <robo-account-polkadot short :info="false" />
                                     </robo-text>
                                 </robo-list-item>
                                 <robo-list-item>

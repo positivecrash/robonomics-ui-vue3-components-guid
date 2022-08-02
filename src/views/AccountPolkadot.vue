@@ -381,13 +381,43 @@ export default defineComponent ({
     },
     beforeInjectedTest() {
       console.log('beforeInjected test callback')
+      console.log('extensionObj', this.$store.state.robonomicsUIvue.polkadot.extensionObj)
     },
     afterInjectedTest() {
       console.log('afterInjected test callback')
+      console.log('extensionObj', this.$store.state.robonomicsUIvue.polkadot.extensionObj)
     },
     onAddressChangeTest() {
       console.log('onAddressChange test callback')
+      console.log('extensionObj', this.$store.state.robonomicsUIvue.polkadot.extensionObj)
     },
+  },
+
+  mounted() {
+    console.log('mounted extensionObj', this.$store.state.robonomicsUIvue.polkadot.extensionObj)
   }
+
+  /* + TO TEST SIGN */
+
+    // watch: {
+    //     "$store.state.robonomicsUIvue.polkadot.extensionObj": async function(value) {
+
+    //         const signer = this.$store.state.robonomicsUIvue.polkadot.extensionObj.signer
+    //         const addr = this.$store.state.robonomicsUIvue.polkadot.address
+
+    //         try {
+    //             // Triggers the extension popup
+    //             await signer.signRaw({
+    //                 type: 'payload',
+    //                 data: 'Some data to sign...',
+    //                 address: addr,
+    //             })
+    //         } catch (err) {
+    //             console.log(err)
+    //         }
+    //     }
+    // }
+
+     /* - TO TEST SIGN */
 })
 </script>
