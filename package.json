@@ -9,6 +9,7 @@
     "build-mine": "export NODE_OPTIONS=--openssl-legacy-provider && vue-cli-service build",
     "lint": "vue-cli-service lint"
   },
+  
   "dependencies": {
     "core-js": "^3.6.5",
     "equal-vue": "^0.79.3",
