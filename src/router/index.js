@@ -20,8 +20,10 @@ import PageDappNewSubsription from '../views/PageDappNewSubsription.vue'
 import PageDappSubsriptionManage from '../views/PageDappSubsriptionManage.vue'
 import PageDappDevices from '../views/PageDappDevices.vue'
 import PageServices from '../views/PageServices.vue'
+import PageServiceDatalog from '../views/PageServiceDatalog.vue'
 import PageServiceLightsUp from '../views/PageServiceLightsUp.vue'
 import PageServiceHomeAssistant from '../views/PageServiceHomeAssistant.vue'
+import PageServiceHomeAssistant2 from '../views/PageServiceHomeAssistant-2.vue'
 import Store from '../views/Store.vue'
 import Changelog from '../views/Changelog.vue'
 
@@ -160,6 +162,14 @@ const routes = [
     },
   },
   {
+    path: '/page-services-datalog',
+    name: 'PageServiceDatalog',
+    component: PageServiceDatalog,
+    meta: {
+      layout: 'Example'
+    },
+  },
+  {
     path: '/page-services-lights-up',
     name: 'PageServiceLightsUp',
     component: PageServiceLightsUp,
@@ -171,6 +181,14 @@ const routes = [
     path: '/page-services-home-assistant',
     name: 'PageServiceHomeAssistant',
     component: PageServiceHomeAssistant,
+    meta: {
+      layout: 'Example'
+    },
+  },
+  {
+    path: '/page-services-home-assistant-2',
+    name: 'PageServiceHomeAssistant-2',
+    component: PageServiceHomeAssistant2,
     meta: {
       layout: 'Example'
     },

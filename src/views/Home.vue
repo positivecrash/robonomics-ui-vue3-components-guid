@@ -83,6 +83,8 @@ createApp(App).use(RoboUi)
       <li>Services: <router-link to="/page-services">Example</router-link>, <a href="https://github.com/positivecrash/robonomics-ui-vue3-components-guide/blob/main/src/views/PageServices.vue" target="_blank">Source</a></li>
       <li>Lights up: <router-link to="/page-services-lights-up">Example</router-link>, <a href="https://github.com/positivecrash/robonomics-ui-vue3-components-guide/blob/main/src/views/PageServiceLightsUp.vue" target="_blank">Source</a></li>
       <li>Home Assistant: <router-link to="/page-services-home-assistant">Example</router-link>, <a href="https://github.com/positivecrash/robonomics-ui-vue3-components-guide/blob/main/src/views/PageServiceHomeAssistant.vue" target="_blank">Source</a></li>
+      <li>Home Assistant 2: <router-link to="/page-services-home-assistant-2">Example</router-link>, <a href="https://github.com/positivecrash/robonomics-ui-vue3-components-guide/blob/main/src/views/PageServiceHomeAssistant-2.vue" target="_blank">Source</a></li>
+      <li>Telemetry: <router-link to="/page-services-datalog">Example</router-link>, <a href="https://github.com/positivecrash/robonomics-ui-vue3-components-guide/blob/main/src/views/PageServiceDatalog.vue" target="_blank">Source</a></li>
       <!-- <li>Devices manage: <router-link to="/page-dapp-devices">Example</router-link>, <a href="https://github.com/positivecrash/robonomics-ui-vue3-components-guide/blob/main/src/views/PageDappDevices.vue" target="_blank">Source</a></li> -->
     </ul>
   </section>
