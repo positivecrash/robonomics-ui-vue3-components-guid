@@ -74,7 +74,7 @@
 
                                 <robo-section offset="x05">
                                     <robo-select 
-                                        :options="['4FdCdaD5LFBS8GZ9XBzQT000004kbPPAJ1FpkkocDd9enZY', '4Hd9ahv9X700000har385fqyUFSLbNZ2scg7x6ZWEA9e9EBV', '4CcVUoz3QByNR00000CKeFGHWikCer7zn1xsVTgxD69vfx6k']"
+                                        :options="['4FdCd...d9enZY', '4Hd9a...e9EBV', '4CcVU...vfx6k']"
                                         :values="['4FdCdaD5LFBS8GZ9XBzQT000004kbPPAJ1FpkkocDd9enZY', '4Hd9ahv9X700000har385fqyUFSLbNZ2scg7x6ZWEA9e9EBV', '4CcVUoz3QByNR00000CKeFGHWikCer7zn1xsVTgxD69vfx6k']"
                                         v-model="demo"
                                         block
