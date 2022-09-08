@@ -82,6 +82,7 @@
                                                 addressLocalAllowEdit
                                                 inputLabel="Subscription owner"
                                                 inputTip="ED25519 type Parachain account address"
+                                                v-model="subscriptionOwnerAddress"
                                             />
                                         </robo-section>
 
@@ -91,6 +92,7 @@
                                                 addressLocalAllowEdit
                                                 inputLabel="Subscription controller"
                                                 inputTip="ED25519 type Parachain account address"
+                                                v-model="subscriptionOwnerAddress"
                                             />
                                         </robo-section>
                                     </robo-section>
@@ -277,7 +279,7 @@ export default defineComponent({
                 },
             ],
             seed1: '',
-            subscriptionOwnerAddress: ' ',
+            subscriptionOwnerAddress: '',
             password: '',
             password2: '',
             errorPasswordCreate: false,
