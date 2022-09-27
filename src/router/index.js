@@ -24,6 +24,7 @@ import PageServiceDatalog from '../views/PageServiceDatalog.vue'
 import PageServiceLightsUp from '../views/PageServiceLightsUp.vue'
 import PageServiceHomeAssistant from '../views/PageServiceHomeAssistant.vue'
 import PageServiceHomeAssistant2 from '../views/PageServiceHomeAssistant-2.vue'
+import PageStaking from '../views/PageStaking.vue'
 import Store from '../views/Store.vue'
 import Changelog from '../views/Changelog.vue'
 
@@ -189,6 +190,14 @@ const routes = [
     path: '/page-services-home-assistant-2',
     name: 'PageServiceHomeAssistant-2',
     component: PageServiceHomeAssistant2,
+    meta: {
+      layout: 'Example'
+    },
+  },
+  {
+    path: '/page-staking',
+    name: 'PageStaking',
+    component: PageStaking,
     meta: {
       layout: 'Example'
     },

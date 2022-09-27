@@ -8,7 +8,7 @@
 
                 <robo-grid-item>
                     <robo-section>
-                        <robo-card back-image="images/card-back-sample.png" back-position="100% 100%" back-size="contain">
+                        <robo-card>
                             <robo-card-label>
                                 <robo-card-label-section>Subscription summary</robo-card-label-section>
                                 <robo-card-label-section info>With this subscription you can interact with smart devices and robots via Robonomics parachain instead of centilized cloud services and providers.</robo-card-label-section>
@@ -35,6 +35,7 @@
                                 </robo-list>
                             </robo-card-section>
                         </robo-card>
+
                     </robo-section>
 
                     <robo-section>
