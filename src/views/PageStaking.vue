@@ -122,28 +122,66 @@
                         <robo-card>
                             <robo-card-label>
                                 <robo-card-label-section>
-                                    Bond / Unbond
+                                    Control section
                                 </robo-card-label-section>
                             </robo-card-label>
 
                             <robo-card-section>
+
+                                <robo-section offset="x1">
+                                    <robo-account-polkadot chain="32" short />
+                                </robo-section>
+
                                 <robo-section offset="x1">
                                     <robo-select 
-                                        :options="['Unbond', 'Bond more']"
+                                        :options="['Unbond', 'Bond more', 'Get Rewards']"
                                         v-model="selectAction"
                                         block
                                     />
                                 </robo-section>
 
                                 <robo-section offset="x1">
+                                    
                                     <robo-input 
-                                        label="Enter value of XRT"
+                                        v-if="selectAction == 'Unbond'"
+                                        label="How much XRT"
+                                    />
+                                    
+                                    <robo-input 
+                                        v-if="selectAction == 'Bond more'"
+                                        label="How much XRT"
                                         tip="Please save some XRT tokens for transaction fees, don't bond all your XRT. You will need it to operate with bonded tokens in the future: claim rewards, bond more, unbond."
                                     />
+
+                                    <robo-input 
+                                        v-if="selectAction == 'Get Rewards'"
+                                        label="Available XRT rewards"
+                                        v-model="rewardsQty"
+                                        disabled
+                                    />
+
                                 </robo-section>
 
                                 <robo-section offset="x1">
                                     <robo-button block size="big">Submit</robo-button>
+
+                                    <!-- process -->
+                                    <!-- <robo-button block size="big" loading>Submitting...</robo-button> -->
+
+                                    <!-- ok -->
+                                    <!-- <robo-button block size="big" disabled="ok">Submited</robo-button> -->
+
+                                    <!-- rewards transferred -->
+                                    <!-- <robo-button block size="big" disabled>Submit</robo-button>
+                                    <robo-notification type="success" title="Rewards successfully transferred" /> -->
+
+                                    <!-- warning (that can be fixed by user) -->
+                                    <!-- <robo-button block size="big">Submit</robo-button>
+                                    <robo-notification type="warning" title="Insufficient balance on choosen account">It needs to be at least the value you specified here plus supposed transaction fee.</robo-notification> -->
+
+                                    <!-- error (that can NOT be fixed by user) -->
+                                    <!-- <robo-button block size="big">Submit</robo-button>
+                                    <robo-notification type="error" title="Some error occured during submitting">For troubleshooting use <robo-link href="https://github.com/airalab/dapp.robonomics.network/issues">GitHub issues</robo-link>. Do not send private messages in any app to avoid scammers.</robo-notification> -->
                                 </robo-section>
 
 
@@ -226,7 +264,8 @@ export default defineComponent({
             // ],
             showPasswordPressed: [false, false],
             showPasswordPressedAll: false,
-            selectAction: 'Unbond'
+            selectAction: 'Unbond',
+            rewardsQty: '0.0008'
         }
     },
 
