@@ -9,10 +9,6 @@ import 'highlight.js/styles/stackoverflow-light.css'
 import { robonomicsUI } from 'robonomics-ui-vue'
 import 'robonomics-ui-vue/style.css'
 
-import GuideSection from './components/GuideSection.vue'
-import UseComponent from './components/UseComponent.vue'
-import Props from './components/Props.vue'
-
 const app = createApp(App)
 
 app
@@ -20,11 +16,7 @@ app
     .use(store)
     .use(VueHighlightJS)
     .use(robonomicsUI, { store })
-
-app
-    .component('GuideSection', GuideSection)
-    .component('UseComponent', UseComponent)
-    .component('Props', Props)
+    // .use(robonomicsUI, { store, key: process.env.VUE_APP_ROBONOMICS_UI_KEY })
 
 app.mount('#app')
 

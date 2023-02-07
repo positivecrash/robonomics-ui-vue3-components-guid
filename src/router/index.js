@@ -1,216 +1,53 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
-import Home from '../views/Home.vue'
-import AccountPolkadot from '../views/AccountPolkadot.vue'
-import Buttons from '../views/Buttons.vue'
-import Loaders from '../views/Loaders.vue'
-import Logo from '../views/Logo.vue'
-import Breadcrumbs from '../views/Breadcrumbs.vue'
-import Icons from '../views/Icons.vue'
-import Sidebar from '../views/Sidebar.vue'
-import Cards from '../views/Cards.vue'
-import Progress from '../views/Progress.vue'
-import Select from '../views/Select.vue'
-import Layouts from '../views/Layouts.vue'
-import Grid from '../views/Grid.vue'
-import PageDappLoading from '../views/PageDappLoading.vue'
-import PageDappLayoutLoading from '../views/PageDappLayoutLoading.vue'
-import PageDappSections from '../views/PageDappSections.vue'
-import PageDappSections2 from '../views/PageDappSections-2.vue'
-import PageDappNewSubsription from '../views/PageDappNewSubsription.vue'
-import PageDappSubsriptionManage from '../views/PageDappSubsriptionManage.vue'
-import PageDappDevices from '../views/PageDappDevices.vue'
-import PageServices from '../views/PageServices.vue'
-import PageServiceDatalog from '../views/PageServiceDatalog.vue'
-import PageServiceLightsUp from '../views/PageServiceLightsUp.vue'
-import PageServiceHomeAssistant from '../views/PageServiceHomeAssistant.vue'
-import PageServiceHomeAssistant2 from '../views/PageServiceHomeAssistant-2.vue'
-import PageStaking from '../views/PageStaking.vue'
-import Store from '../views/Store.vue'
-import Changelog from '../views/Changelog.vue'
+import Telemetry from '../views/examples/telemetry.vue'
+import Home from '../views/examples/home.vue'
+import Rwssetup from '../views/examples/rwssetup.vue'
+import RwssetupEdit from '../views/examples/rwssetup-edit.vue'
+import Rwssetupslist from '../views/examples/rwssetupslist.vue'
+import Rwsuserslist from '../views/examples/rwsuserslist.vue'
+import Rwsactivate from '../views/examples/rwsactivate.vue'
+import Rwsusersetup from '../views/examples/rwsusersetup.vue'
 
 const routes = [
   {
+    path: '/telemetry',
+    name: 'ExampleTelemetry',
+    component: Telemetry
+  },
+  {
     path: '/',
-    name: 'Home',
+    name: 'ExampleHome',
     component: Home
   },
   {
-    path: '/account-polkadot',
-    name: 'AccountPolkadot',
-    component: AccountPolkadot
+    path: '/rwssetup',
+    name: 'ExampleRwssetup',
+    component: Rwssetup
   },
   {
-    path: '/buttons',
-    name: 'Buttons',
-    component: Buttons
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    // component: () => import(/* webpackChunkName: "buttons" */ '../views/Buttons.vue')
+    path: '/rwssetup-edit',
+    name: 'ExampleRwssetupEdit',
+    component: RwssetupEdit
   },
   {
-    path: '/loaders',
-    name: 'Loaders',
-    component: Loaders
+    path: '/rwsactivate',
+    name: 'ExampleRwsactivate',
+    component: Rwsactivate
   },
   {
-    path: '/logo',
-    name: 'Logo',
-    component: Logo
+    path: '/rwssetupslist',
+    name: 'ExampleRwssetupslist',
+    component: Rwssetupslist
   },
   {
-    path: '/breadcrumbs',
-    name: 'Breadcrumbs',
-    component: Breadcrumbs
+    path: '/rwsusersetup',
+    name: 'ExampleRwsusersetup',
+    component: Rwsusersetup
   },
   {
-    path: '/icons',
-    name: 'Icons',
-    component: Icons
-  },
-  {
-    path: '/sidebar',
-    name: 'Sidebar',
-    component: Sidebar
-  },
-  {
-    path: '/cards',
-    name: 'Cards',
-    component: Cards
-  },
-  {
-    path: '/progress',
-    name: 'Progress',
-    component: Progress
-  },
-  {
-    path: '/select',
-    name: 'Select',
-    component: Select
-  },
-  {
-    path: '/layouts',
-    name: 'Layouts',
-    component: Layouts
-  },
-  {
-    path: '/grid',
-    name: 'Grid',
-    component: Grid
-  },
-  {
-    path: '/page-dapp-loading',
-    name: 'PageDappLoading',
-    component: PageDappLoading,
-    meta: {
-      layout: 'Example'
-    },
-  },
-  {
-    path: '/page-dapp-layout-loading',
-    name: 'PageDappLayoutLoading',
-    component: PageDappLayoutLoading,
-    meta: {
-      layout: 'Example'
-    },
-  },
-  {
-    path: '/page-dapp-sections',
-    name: 'PageDappSections',
-    component: PageDappSections,
-    meta: {
-      layout: 'Example'
-    },
-  },
-  {
-    path: '/page-dapp-sections-2',
-    name: 'PageDappSections2',
-    component: PageDappSections2,
-    meta: {
-      layout: 'Example'
-    },
-  },
-  {
-    path: '/page-dapp-new-subsription',
-    name: 'PageDappNewSubsription',
-    component: PageDappNewSubsription,
-    meta: {
-      layout: 'Example'
-    },
-  },
-  {
-    path: '/page-dapp-subsription-manage',
-    name: 'PageDappSubsriptionManage',
-    component: PageDappSubsriptionManage,
-    meta: {
-      layout: 'Example'
-    },
-  },
-  {
-    path: '/page-dapp-devices',
-    name: 'PageDappDevices',
-    component: PageDappDevices,
-    meta: {
-      layout: 'Example'
-    },
-  },
-  {
-    path: '/page-services',
-    name: 'PageServices',
-    component: PageServices,
-    meta: {
-      layout: 'Example'
-    },
-  },
-  {
-    path: '/page-services-datalog',
-    name: 'PageServiceDatalog',
-    component: PageServiceDatalog,
-    meta: {
-      layout: 'Example'
-    },
-  },
-  {
-    path: '/page-services-lights-up',
-    name: 'PageServiceLightsUp',
-    component: PageServiceLightsUp,
-    meta: {
-      layout: 'Example'
-    },
-  },
-  {
-    path: '/page-services-home-assistant',
-    name: 'PageServiceHomeAssistant',
-    component: PageServiceHomeAssistant,
-    meta: {
-      layout: 'Example'
-    },
-  },
-  {
-    path: '/page-services-home-assistant-2',
-    name: 'PageServiceHomeAssistant-2',
-    component: PageServiceHomeAssistant2,
-    meta: {
-      layout: 'Example'
-    },
-  },
-  {
-    path: '/page-staking',
-    name: 'PageStaking',
-    component: PageStaking,
-    meta: {
-      layout: 'Example'
-    },
-  },
-  {
-    path: '/store',
-    name: 'Store',
-    component: Store
-  },
-  {
-    path: '/changelog',
-    name: 'Changelog',
-    component: Changelog
+    path: '/rwsuserslist',
+    name: 'ExampleRwsuserslist',
+    component: Rwsuserslist
   },
 ]
 
