@@ -12,8 +12,10 @@ const store = useStore()
 onMounted( () => {
 
   // global data for the app
-  store.commit('polkadot/setBalanceXRT', 1000)
 
+  // Нужно обновлять этло значение всегда, когда обновляется это store.state.robonomicsUIvue.polkadot.address
+  store.commit('polkadot/setBalanceXRT', 1000)
+ 
   store.commit('rws/setKey', process.env.VUE_APP_ROBONOMICS_UI_KEY)
   store.dispatch('rws/init')
 
