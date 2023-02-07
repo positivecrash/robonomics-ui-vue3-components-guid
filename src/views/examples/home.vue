@@ -2,6 +2,8 @@
     <robo-layout>
         <dapp-header title="Dashboard" />
 
+        {{rws}}
+
         <robo-layout-section>
           <robo-grid offset="x0" gap="x1" valign="start" galign="start" minColumnWidth="550px" maxColumnWidth="1fr">
 
