@@ -909,14 +909,14 @@
     "@babel/types" "^7.4.4"
     esutils "^2.0.2"
 
-"@babel/runtime@^7.11.0", "@babel/runtime@^7.20.6", "@babel/runtime@^7.20.7", "@babel/runtime@^7.8.4":
+"@babel/runtime@^7.11.0", "@babel/runtime@^7.20.7", "@babel/runtime@^7.8.4":
   version "7.20.7"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.20.7.tgz#fcb41a5a70550e04a7b708037c7c32f7f356d8fd"
   integrity sha512-UF0tvkUtxwAgZ5W/KrkHf0Rn0fdnLDU9ScxBrEVNUprE/MzirjK4MJUX1/BVDv00Sv8cljtukVK1aky++X1SjQ==
   dependencies:
     regenerator-runtime "^0.13.11"
 
-"@babel/runtime@^7.18.6":
+"@babel/runtime@^7.18.6", "@babel/runtime@^7.20.6":
   version "7.20.13"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.20.13.tgz#7055ab8a7cff2b8f6058bf6ae45ff84ad2aded4b"
   integrity sha512-gt3PKXs0DBoL9xCvOIIZ2NEqAGZqHjAnmVbfQtB620V0uReIQutpel14KcneZuer7UioY8ALKZ7iocavvzTNFA==
@@ -1663,9 +1663,9 @@
     form-data "^3.0.0"
 
 "@types/node@*":
-  version "18.11.18"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-18.11.18.tgz#8dfb97f0da23c2293e554c5a50d61ef134d7697f"
-  integrity sha512-DHQpWGjyQKSHj3ebjFI/wRKcqQcdR+MoFBygntYOZytCqNfkd2ZC4ARDJ2DQqhjH5p85Nnd3jhUJIXrszFX/JA==
+  version "18.13.0"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-18.13.0.tgz#0400d1e6ce87e9d3032c19eb6c58205b0d3f7850"
+  integrity sha512-gC3TazRzGoOnoKAhUx+Q0t8S9Tzs74z7m0ipwGpSqQrleP14hKxP4/JUeEQcD3W1/aIpnWl8pHowI7WokuZpXg==
 
 "@types/normalize-package-data@^2.4.0":
   version "2.4.1"
@@ -8421,9 +8421,9 @@ robonomics-js@^0.6.3:
     web3-utils "^1.2.8"
 
 robonomics-ui-vue@^0.1.0:
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/robonomics-ui-vue/-/robonomics-ui-vue-0.1.0.tgz#2d47159f36dca04f729cfb67ad09240737a3aa83"
-  integrity sha512-qbPtSSxmRNMWGB/VkOqskxoKdmi6sk3ud3mj0TUAoOwBaSNOln0ZP1ou/FljJ0wi4iRFs0C2tqxvnpr/vYhmYA==
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/robonomics-ui-vue/-/robonomics-ui-vue-0.1.1.tgz#879fcee432b2944b127c2717ba5bff8159dcacfc"
+  integrity sha512-3Gk+NRILLxMN9q43APQ+AIX1/vVmjTKORaN/6sRLt9PiGALHoIaZDqeYnjJZwn87mcUyPwXx5kmnzzTt5WzxMQ==
   dependencies:
     "@polkadot/util-crypto" "^9.4.1"
     crypto-js "^4.1.1"
