@@ -2,7 +2,7 @@
     <robo-layout>
         <dapp-header title="Users in your RWS" />
 
-        <robo-layout-section width="narrow">
+        <robo-layout-section width="narrow" :vcenter="rws?.length < 1" :gcenter="rws?.length < 1">
 
           <robo-grid offset="x0">
 
