@@ -13,7 +13,7 @@ onMounted( () => {
 
   // global data for the app
 
-  // Нужно обновлять этло значение всегда, когда обновляется это store.state.robonomicsUIvue.polkadot.address
+  // Нужно обновлять это значение всегда, когда обновляется это store.state.robonomicsUIvue.polkadot.address
   store.commit('polkadot/setBalanceXRT', 1000)
  
   store.commit('rws/setKey', process.env.VUE_APP_ROBONOMICS_UI_KEY)

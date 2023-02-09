@@ -5,16 +5,22 @@
         <robo-layout-section>
           <robo-grid offset="x0" gap="x1" valign="start" galign="start" minColumnWidth="550px" maxColumnWidth="1fr">
 
-            <robo-video 
-              autoplay
-              loop
-              :sources="[
-                {
+                <!-- {
                   src: 'https://static.robonomics.network/dapp/Robonomics-smart-home-intro.webm',
                   type: 'video/webm'
                 },
                 {
                   src: 'https://static.robonomics.network/dapp/Robonomics-smart-home-intro.mp4',
+                  type: 'video/mp4'
+                } -->
+
+
+            <robo-video 
+              autoplay
+              loop
+              :sources="[
+                {
+                  src: 'https://crustipfs.info/ipfs/QmX5DLQAxuWkMEaCCErQya3PyrdiwgD4MhhzA58rTTPYRP',
                   type: 'video/mp4'
                 }
               ]"
