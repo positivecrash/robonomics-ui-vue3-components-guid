@@ -20,7 +20,7 @@
               loop
               :sources="[
                 {
-                  src: 'https://crustipfs.info/ipfs/QmX5DLQAxuWkMEaCCErQya3PyrdiwgD4MhhzA58rTTPYRP',
+                  src: 'https://crustipfs.art/ipfs/QmStCDsEHCYwVYvnDdmZBMnobPmrgZx3iJLm65b8XNzKQa',
                   type: 'video/mp4'
                 }
               ]"
