@@ -1,6 +1,5 @@
 <template>
   <Default />
-  {{store.state.robonomicsUIvue.rws.list}}
 </template>
 
 <script setup>
@@ -44,7 +43,7 @@ onMounted( () => {
           ...item, 
           enddate: checkStatus(item.owner, item.enddate)
     }))
-    
+
     store.dispatch('rws/rewrite', arr)
   }
   
