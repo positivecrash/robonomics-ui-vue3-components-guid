@@ -14,12 +14,13 @@ let checkStatus = (owner, enddate) => {
   console.log(owner, enddate)
 
   /* посчитать нам нужно тянуть дату из блокчейна или нет */
-  const now = new Date()
-  const end = new Date(enddate)
+  const now = Date.now()
+  const end = enddate
 
-  if( now && end && (end.getTime() - now.getTime()) < 0 ) {
+  if( now && end && (end - now) < 0 ) {
     /* получаем дату окончания подписки для owner и возвращаем */
-    return '10/20/2023'
+    /* пока тут просто дата для тестов */
+    return Date.parse('02/23/2023')
   } else {
     return enddate
   }

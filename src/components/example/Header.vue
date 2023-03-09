@@ -17,31 +17,31 @@ const props = defineProps({
 })
 
 const navigation =  [
-    {
-        title: 'Smart home',
-        links: [
-        {
-            title: 'Activation',
-            link: 'rwsactivate',
-            type: 'router'
-        },
-        {
-            title: 'Setups',
-            link: 'rwssetupslist',
-            type: 'router'
-        },
-        {
-            title: 'Devices',
-            link: 'telemetry',
-            type: 'router'
-        },
-        {
-            title: 'Users',
-            link: 'rwsuserslist',
-            type: 'router'
-        },
-        ]
-    },
+    // {
+    //     title: 'Smart home',
+    //     links: [
+    //     {
+    //         title: 'Activation',
+    //         link: 'rwsactivate',
+    //         type: 'router'
+    //     },
+    //     {
+    //         title: 'Setups',
+    //         link: 'rwssetupslist',
+    //         type: 'router'
+    //     },
+    //     {
+    //         title: 'Users',
+    //         link: 'rwsuserslist',
+    //         type: 'router'
+    //     },
+    //     {
+    //         title: 'Devices',
+    //         link: 'telemetry',
+    //         type: 'router'
+    //     }
+    //     ]
+    // },
 
     {
         title: 'Other',

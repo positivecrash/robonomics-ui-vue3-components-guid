@@ -10,10 +10,7 @@
           v-model:name="nameNew"
           v-model:enddate="enddateNew"
 
-          @before-rws-setup="testBeforeSetup"
           @on-rws-setup="testOnSetup"
-          @after-rws-setup="testAfterSetup"
-
           @owner-changed="setEnddate"
           />
         </robo-layout-section>
@@ -32,25 +29,17 @@ import { ref } from 'vue'
 let ownerNew = ref(null)
 let controllerNew = ref(null)
 let scontrollerNew = ref(null)
-let nameNew = ref(null)
+let nameNew = ref('My Smart Devices')
 let enddateNew = ref(null)
 
 let setEnddate = () => {
   console.log('test owner-changed')
-  enddateNew.value = "02/10/2023"
+  enddateNew.value = Date.now()
 }
 
-let testBeforeSetup = () => {
-  console.log('test before-rws-setup')
-}
-
-let testOnSetup = () => {
+let testOnSetup = (rwsStatus) => {
   console.log('test on-rws-setup')
-}
-
-let testAfterSetup = (rwsStatus) => {
-  console.log('test after-rws-setup')
   rwsStatus('ok')
-  // rwsStatus('error', 'Please check controller address')
+  // rwsStatus('error', 'Your address not found in this subscription')
 }
 </script>

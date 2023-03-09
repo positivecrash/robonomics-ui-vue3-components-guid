@@ -7,7 +7,7 @@
         </robo-layout-section>
 
         <robo-layout-section width="narrow" v-else>
-     
+
             <robo-grid offset="x1" gap="x1">
               <robo-template-rws-setup-listitem 
                 v-for="(setup,index) in rws" :key="index" 
@@ -18,13 +18,8 @@
                 v-model:name="setup.name"
                 v-model:enddate="setup.enddate"
 
-                :beforeEdit="testBeforeSetup"
                 :onEdit="testOnSetup"
-                :afterEdit="testAfterSetup"
-
-                @before-rws-delete="testBeforeDelete"
                 @on-rws-delete="testOnDelete"
-                @after-rws-delete="testAfterDelete"
               />
             </robo-grid>
             <robo-button block :router="store.state.robonomicsUIvue.rws.links.setup">+ Add new rws</robo-button>
@@ -59,33 +54,16 @@ const rws = computed ( () => {
 /* - get rws */
 
 
-
-let testBeforeSetup = () => {
-  console.log('test list before-rws-setup')
-}
-
-let testOnSetup = () => {
+let testOnSetup = (rwsStatus) => {
   console.log('test list on-rws-setup')
-}
-
-let testAfterSetup = (rwsStatus) => {
-  console.log('test list after-rws-setup')
   rwsStatus('ok')
   // rwsStatus('error', 'Please check controller address')
 }
 
-
-let testBeforeDelete = () => {
-  console.log('test list before-rws-delete')
-}
-
-let testOnDelete = () => {
+let testOnDelete = (rwsDelete) => {
   console.log('test list on-rws-delete')
-}
-
-let testAfterDelete = (rwsDelete) => {
-  console.log('test list after-rws-delete')
   rwsDelete('ok')
   // rwsDelete('error', 'RWS setup has not been deleted')
 }
+
 </script>

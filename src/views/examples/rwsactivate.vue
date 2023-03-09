@@ -7,9 +7,7 @@
           activationtime="2"
           available="7"
 
-          @before-rws-activate = "beforeActivate"
           @on-rws-activate = "onActivate"
-          @after-rws-activate = "afterActivate"
           />
         </robo-layout-section>
     </robo-layout>
@@ -23,17 +21,10 @@
 <script setup>
 import dappHeader from '../../components/example/Header.vue'
 
-let beforeActivate = () => {
-  console.log('beforeActivate test')
-}
-
-let onActivate = () => {
+let onActivate = (rwsStatus) => {
   console.log('onActivate test')
-}
-
-let afterActivate = (rwsStatus) => {
-  console.log('afterActivate test')
   rwsStatus('ok')
   // rwsStatus('error', 'Subscription can not be activated due to unsuffcicient XRT balance')
 }
+
 </script>

@@ -3,9 +3,7 @@
         <dapp-header title="Smart devices" />
 
         <robo-template-devices-layout 
-          :beforeUpdate = "beforeUpdateTest"
           :onUpdate = "onUpdateTest"
-          :afterUpdate = "afterUpdateTest"
 
           :datalog="datalog"
           :config="config"
@@ -26,16 +24,8 @@ import config from '../../data/shtab/config.json'
 
 import dappHeader from '../../components/example/Header.vue'
 
-let beforeUpdateTest = () => {
-  console.log('beforeUpdateTest')
-}
-
-let onUpdateTest = () => {
+let onUpdateTest = (updateStatus) => {
   console.log('onUpdateTest')
-}
-
-let afterUpdateTest = (updateStatus) => {
-  console.log('afterUpdateTest')
   updateStatus('ok')
   // updateStatus('error')
 }

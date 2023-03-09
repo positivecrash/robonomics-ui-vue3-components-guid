@@ -7,9 +7,7 @@
             v-model:address="addressNew"
             v-model:name="nameNew"
 
-            @before-user-setup="testBeforeSetup"
             @on-user-setup="testOnSetup"
-            @after-user-setup="testAfterSetup"
           />
         </robo-layout-section>
 
@@ -33,16 +31,8 @@ import { ref } from 'vue'
 let addressNew = ref(null)
 let nameNew = ref(null)
 
-let testBeforeSetup = () => {
-  console.log('test before-rws-setup')
-}
-
-let testOnSetup = () => {
+let testOnSetup = (rwsStatus) => {
   console.log('test on-rws-setup')
-}
-
-let testAfterSetup = (rwsStatus) => {
-  console.log('test after-rws-setup')
   rwsStatus('ok')
   // rwsStatus('error', 'Please check controller address')
 }
