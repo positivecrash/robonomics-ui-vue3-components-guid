@@ -109,18 +109,6 @@
 
         </robo-layout-section>
 
-
-            
-            <!-- <robo-template-ha-setup 
-            v-model:owner="ownerNew"
-            v-model:controller="controllerNew"
-            v-model:scontroller="scontrollerNew"
-            v-model:name="nameNew"
-            v-model:enddate="enddateNew"
-
-            @on-rws-setup="testOnSetup"
-            @owner-changed="setEnddate"
-          /> -->
     </robo-layout>
 
 </template>
