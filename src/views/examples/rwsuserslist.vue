@@ -4,7 +4,6 @@
 
         <robo-layout-section width="narrow" :vcenter="rws?.length < 1" :gcenter="rws?.length < 1">
 
-
           <robo-template-rws-activeselect 
             v-if="rws?.length > 1" 
             block
@@ -29,12 +28,13 @@
             <robo-button block :router="store.state.robonomicsUIvue.rws.links.useractivate">+ Add user</robo-button>
         </div>
 
-
-        </robo-layout-section>
-
-        <robo-layout-section width="narrow">
+        <robo-section offset="x4" width="narrow">
           <robo-template-rws-setup-backup />
+        </robo-section>
+
         </robo-layout-section>
+
+
 
     </robo-layout>
 

@@ -2,17 +2,20 @@
     <robo-layout>
         <dapp-header title="RWS add user" />
 
-        <robo-layout-section width="narrow">
-          <robo-template-rws-user-setup 
-            v-model:address="addressNew"
-            v-model:name="nameNew"
+        <robo-layout-section>
 
-            @on-user-setup="testOnSetup"
-          />
-        </robo-layout-section>
+          <robo-section width="narrow">
+            <robo-template-rws-user-setup 
+              v-model:address="addressNew"
+              v-model:name="nameNew"
 
-        <robo-layout-section width="narrow">
-          <robo-template-rws-setup-backup />
+              @on-user-setup="testOnSetup"
+            />
+          </robo-section>
+
+          <robo-section offset="x4" width="narrow">
+            <robo-template-rws-setup-backup />
+          </robo-section>
         </robo-layout-section>
    
     </robo-layout>
@@ -34,6 +37,7 @@ let nameNew = ref(null)
 let testOnSetup = (rwsStatus) => {
   console.log('test on-rws-setup')
   rwsStatus('ok')
+  // rwsStatus('cancel')
   // rwsStatus('error', 'Please check controller address')
 }
 </script>

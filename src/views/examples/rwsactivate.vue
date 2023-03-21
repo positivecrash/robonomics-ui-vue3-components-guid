@@ -1,15 +1,17 @@
 <template>
     <robo-layout>
         <dapp-header title="RWS activation" />
-        <robo-layout-section width="narrow">
+
+        <robo-layout-section>
           <robo-template-rws-activate 
           price="1.0000001"
           activationtime="2"
           available="7"
 
           @on-rws-activate = "onActivate"
-          />
+        />
         </robo-layout-section>
+
     </robo-layout>
 
 </template>

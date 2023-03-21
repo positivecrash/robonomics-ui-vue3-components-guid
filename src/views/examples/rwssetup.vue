@@ -1,8 +1,8 @@
 <template>
     <robo-layout>
         <dapp-header title="RWS setup" />
-        <robo-layout-section width="narrow">
-          
+        
+        <robo-layout-section>
           <robo-template-rws-setup 
           v-model:owner="ownerNew"
           v-model:controller="controllerNew"
@@ -39,6 +39,7 @@ let setEnddate = () => {
 
 let testOnSetup = (rwsStatus) => {
   console.log('test on-rws-setup')
+  // rwsStatus('cancel')
   rwsStatus('ok')
   // rwsStatus('error', 'Your address not found in this subscription')
 }

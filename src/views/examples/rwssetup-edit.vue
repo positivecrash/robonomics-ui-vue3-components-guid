@@ -2,7 +2,8 @@
   <!-- вариант редактирования подписки на отдельной странице. По сути сейчас не используется -->
     <robo-layout>
         <dapp-header title="RWS edit" />
-        <robo-layout-section width="narrow">
+        
+        <robo-layout-section>
           <robo-template-rws-setup 
             edit
 

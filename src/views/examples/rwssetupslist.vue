@@ -6,28 +6,31 @@
           <robo-template-rws-setups-empty />
         </robo-layout-section>
 
-        <robo-layout-section width="narrow" v-else>
+        <robo-layout-section v-else>
 
-            <robo-grid offset="x1" gap="x1">
-              <robo-template-rws-setup-listitem 
-                v-for="(setup,index) in rws" :key="index" 
+            <robo-section offset="x0" width="narrow">
+              <robo-grid offset="x1" gap="x1">
+                <robo-template-rws-setup-listitem 
+                  v-for="(setup,index) in rws" :key="index" 
 
-                v-model:owner="setup.owner"
-                v-model:controller="setup.controller"
-                v-model:scontroller="setup.scontroller"
-                v-model:name="setup.name"
-                v-model:enddate="setup.enddate"
+                  v-model:owner="setup.owner"
+                  v-model:controller="setup.controller"
+                  v-model:scontroller="setup.scontroller"
+                  v-model:name="setup.name"
+                  v-model:enddate="setup.enddate"
 
-                :onEdit="testOnSetup"
-                @on-rws-delete="testOnDelete"
-              />
-            </robo-grid>
-            <robo-button block :router="store.state.robonomicsUIvue.rws.links.setup">+ Add new rws</robo-button>
-     
-        </robo-layout-section>
+                  :onEdit="testOnSetup"
+                  @on-rws-delete="testOnDelete"
+                />
 
-        <robo-layout-section width="narrow">
-          <robo-template-rws-setup-backup />
+                <robo-button block :router="store.state.robonomicsUIvue.rws.links.setup">+ Add new rws</robo-button>
+              </robo-grid>
+            </robo-section>
+
+            <robo-section offset="x4" width="narrow">
+              <robo-template-rws-setup-backup />
+            </robo-section>
+
         </robo-layout-section>
 
     </robo-layout>

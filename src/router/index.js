@@ -7,6 +7,7 @@ import Rwssetupslist from '../views/examples/rwssetupslist.vue'
 import Rwsuserslist from '../views/examples/rwsuserslist.vue'
 import Rwsactivate from '../views/examples/rwsactivate.vue'
 import Rwsusersetup from '../views/examples/rwsusersetup.vue'
+import Hasetup from '../views/examples/hasetup.vue'
 
 const routes = [
   {
@@ -48,6 +49,11 @@ const routes = [
     path: '/rwsuserslist',
     name: 'ExampleRwsuserslist',
     component: Rwsuserslist
+  },
+  {
+    path: '/hasetup',
+    name: 'ExampleHasetup',
+    component: Hasetup
   },
 ]
 
