@@ -54,6 +54,7 @@ onMounted( () => {
   store.commit('rws/setLinkDevices', '/telemetry')
   store.commit('rws/setLinkUsers', '/rwsuserslist')
   store.commit('rws/setLinkUseractivate', '/rwsusersetup')
+  store.commit('rws/setLinkHaSetup', '/hasetup')
   store.commit('ipfs/setGateways', ['https://ipfs.io/ipfs/'])
   
 
