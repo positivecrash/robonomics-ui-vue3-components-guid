@@ -98,7 +98,7 @@
             </form>
           </robo-section>
 
-          <robo-section mark="question" marktitle="What's next" offset="x0" width="narrow">
+          <robo-section mark="info" marktitle="What's next" offset="x0" width="narrow">
             <robo-text offset="x0">
                 <p>To open your local Home Assistant panel:</p>
                 <p>1. Please enter in browser the following url: http://YOUR_LOCAL_IP:8123</p>
@@ -108,6 +108,7 @@
           </robo-section>
 
         </robo-layout-section>
+
 
     </robo-layout>
 

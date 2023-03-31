@@ -2,7 +2,42 @@
     <robo-layout>
         <dapp-header title="Users in your RWS" />
 
-        <robo-layout-section width="narrow" :vcenter="rws?.length < 1" :gcenter="rws?.length < 1">
+        <robo-layout-section v-if="rws?.length < 1 || !users || users.length < 1" rwsrecover>
+          <robo-section width="narrow" gcenter>
+            <robo-template-rws-activeselect 
+              v-if="rws?.length > 1" 
+              block
+              label="Selected RWS"
+            />
+            <robo-template-rws-users-empty />
+          </robo-section>
+        </robo-layout-section>
+
+        <robo-layout-section v-else rwsrecover rwssave>
+
+          <robo-section offset="x0" width="narrow">
+            <robo-grid offset="x1" gap="x1">
+                <robo-template-rws-user-listitem 
+                  v-for="(user , index) in users" :key="index" 
+
+                  :owner = "rwsactive"
+                  v-model:address = "user.address"
+                  v-model:name = "user.name"
+
+                  :onEdit = "testOnSetup"
+                  @on-user-delete = "testOnDelete"
+                />
+              </robo-grid>
+              <robo-button block :router="store.state.robonomicsUIvue.rws.links.useractivate">+ Add user</robo-button>
+          </robo-section>
+
+        </robo-layout-section>
+
+
+
+        <!-- <robo-layout-section width="narrow" :vcenter="rws?.length < 1" :gcenter="rws?.length < 1">
+
+          <robo-template-rws-setup-backup position="side-right" />
 
           <robo-template-rws-activeselect 
             v-if="rws?.length > 1" 
@@ -28,11 +63,7 @@
             <robo-button block :router="store.state.robonomicsUIvue.rws.links.useractivate">+ Add user</robo-button>
         </div>
 
-        <robo-section offset="x4" width="narrow">
-          <robo-template-rws-setup-backup />
-        </robo-section>
-
-        </robo-layout-section>
+        </robo-layout-section> -->
 
 
 

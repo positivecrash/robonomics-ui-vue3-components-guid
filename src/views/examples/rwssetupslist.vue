@@ -2,14 +2,17 @@
     <robo-layout>
         <dapp-header title="Your RWS setups" />
 
-        <robo-layout-section width="narrow" vcenter gcenter v-if="rws?.length < 1">
-          <robo-template-rws-setups-empty />
+        <robo-layout-section v-if="rws?.length < 1" rwsrecover>
+          <robo-section width="narrow" gcenter>
+            <robo-template-rws-setups-empty />
+          </robo-section>
         </robo-layout-section>
 
-        <robo-layout-section v-else>
+        <robo-layout-section v-else rwsrecover rwssave>
 
             <robo-section offset="x0" width="narrow">
               <robo-grid offset="x1" gap="x1">
+                
                 <robo-template-rws-setup-listitem 
                   v-for="(setup,index) in rws" :key="index" 
 
@@ -25,10 +28,6 @@
 
                 <robo-button block :router="store.state.robonomicsUIvue.rws.links.setup">+ Add new rws</robo-button>
               </robo-grid>
-            </robo-section>
-
-            <robo-section offset="x4" width="narrow">
-              <robo-template-rws-setup-backup />
             </robo-section>
 
         </robo-layout-section>

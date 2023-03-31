@@ -1,8 +1,9 @@
 <template>
     <robo-layout>
         <dapp-header title="RWS setup" />
-        
-        <robo-layout-section>
+
+        <robo-layout-section rwsrecover>
+          
           <robo-template-rws-setup 
           v-model:owner="ownerNew"
           v-model:controller="controllerNew"

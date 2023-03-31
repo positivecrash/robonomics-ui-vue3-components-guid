@@ -2,20 +2,15 @@
     <robo-layout>
         <dapp-header title="RWS add user" />
 
-        <robo-layout-section>
+        <robo-layout-section rwsrecover>
 
-          <robo-section width="narrow">
-            <robo-template-rws-user-setup 
-              v-model:address="addressNew"
-              v-model:name="nameNew"
+          <robo-template-rws-user-setup 
+            v-model:address="addressNew"
+            v-model:name="nameNew"
 
-              @on-user-setup="testOnSetup"
-            />
-          </robo-section>
-
-          <robo-section offset="x4" width="narrow">
-            <robo-template-rws-setup-backup />
-          </robo-section>
+            @on-user-setup="testOnSetup"
+          />
+          
         </robo-layout-section>
    
     </robo-layout>
