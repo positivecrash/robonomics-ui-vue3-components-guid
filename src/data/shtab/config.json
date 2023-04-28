@@ -608,17 +608,6 @@
                             }
                         }
                     },
-                    "white_value": {
-                        "name": "White level",
-                        "description": "Number indicating level of white.",
-                        "advanced": true,
-                        "selector": {
-                            "number": {
-                                "min": 0,
-                                "max": 255
-                            }
-                        }
-                    },
                     "brightness": {
                         "name": "Brightness value",
                         "description": "Number indicating brightness, where 0 turns the light off, 1 is the minimum brightness and 255 is the maximum brightness supported by the light.",
@@ -1241,28 +1230,6 @@
                 "fields": {}
             }
         },
-        "select": {
-            "select_option": {
-                "name": "Select",
-                "description": "Select an option of an select entity.",
-                "fields": {
-                    "option": {
-                        "name": "Option",
-                        "description": "Option to be selected.",
-                        "required": true,
-                        "example": "\"Item A\"",
-                        "selector": {
-                            "text": null
-                        }
-                    }
-                },
-                "target": {
-                    "entity": {
-                        "domain": "select"
-                    }
-                }
-            }
-        },
         "vacuum": {
             "turn_on": {
                 "name": "Turn on",
@@ -1408,65 +1375,6 @@
                 }
             }
         },
-        "lock": {
-            "unlock": {
-                "name": "Unlock",
-                "description": "Unlock all or specified locks.",
-                "fields": {
-                    "code": {
-                        "name": "Code",
-                        "description": "An optional code to unlock the lock with.",
-                        "example": 1234,
-                        "selector": {
-                            "text": null
-                        }
-                    }
-                },
-                "target": {
-                    "entity": {
-                        "domain": "lock"
-                    }
-                }
-            },
-            "lock": {
-                "name": "Lock",
-                "description": "Lock all or specified locks.",
-                "fields": {
-                    "code": {
-                        "name": "Code",
-                        "description": "An optional code to lock the lock with.",
-                        "example": 1234,
-                        "selector": {
-                            "text": null
-                        }
-                    }
-                },
-                "target": {
-                    "entity": {
-                        "domain": "lock"
-                    }
-                }
-            },
-            "open": {
-                "name": "Open",
-                "description": "Open all or specified locks.",
-                "fields": {
-                    "code": {
-                        "name": "Code",
-                        "description": "An optional code to open the lock with.",
-                        "example": 1234,
-                        "selector": {
-                            "text": null
-                        }
-                    }
-                },
-                "target": {
-                    "entity": {
-                        "domain": "lock"
-                    }
-                }
-            }
-        },
         "camera": {
             "enable_motion_detection": {
                 "name": "Enable motion detection",
@@ -1605,6 +1513,23 @@
                     }
                 }
             }
+        },
+        "input_button": {
+            "reload": {
+                "name": "",
+                "description": "",
+                "fields": {}
+            },
+            "press": {
+                "name": "Press",
+                "description": "Press the input button entity.",
+                "fields": {},
+                "target": {
+                    "entity": {
+                        "domain": "input_button"
+                    }
+                }
+            }
         }
     },
     "dashboard": {
@@ -1628,9 +1553,6 @@
                                 "entity": "binary_sensor.motion_work_zone_occupancy"
                             },
                             {
-                                "entity": "binary_sensor.motion_bedroom_occupancy"
-                            },
-                            {
                                 "entity": "binary_sensor.motion_kitchen_occupancy"
                             },
                             {
@@ -1642,19 +1564,86 @@
                     {
                         "type": "entities",
                         "entities": [
-                            "lock.smart_door_lock_n100_d284",
-                            "button.smart_door_lock_n100_d284_identify"
-                        ]
+                            {
+                                "entity": "switch.bathroom_switch_switch"
+                            },
+                            {
+                                "entity": "switch.sauna_bath_mirror_switch_l1"
+                            },
+                            {
+                                "entity": "switch.sauna_bath_mirror_switch_l2"
+                            },
+                            {
+                                "entity": "switch.bedroom_switch_switch_l1"
+                            },
+                            {
+                                "entity": "switch.bedroom_switch_switch_l2"
+                            },
+                            {
+                                "entity": "switch.reading_area_near_balcony_switch"
+                            },
+                            {
+                                "entity": "switch.picture_nft_relay_switch_l1"
+                            },
+                            {
+                                "entity": "switch.storage_room_and_hallway_switch_l2"
+                            },
+                            {
+                                "entity": "switch.storage_room_and_hallway_switch_l1"
+                            },
+                            {
+                                "entity": "switch.main_work_zone_relay_switch"
+                            },
+                            {
+                                "entity": "switch.work_zone_wall_switch_switch"
+                            },
+                            {
+                                "entity": "switch.kitchen_main_switch"
+                            },
+                            {
+                                "entity": "switch.kitchen_cooking_area_switch"
+                            },
+                            {
+                                "entity": "switch.toilet_switch_switch"
+                            }
+                        ],
+                        "state_color": true,
+                        "title": "Light switch"
                     },
                     {
-                        "type": "media-control",
-                        "entity": "media_player.lg_webos_smart_tv"
+                        "show_state": false,
+                        "show_name": true,
+                        "camera_view": "live",
+                        "type": "picture-entity",
+                        "name": "BIgBro",
+                        "entity": "camera.big_bro_mainstream",
+                        "aspect_ratio": "50%"
                     },
                     {
                         "type": "entities",
                         "entities": [
-                            "vacuum.pylesos_shtab"
+                            {
+                                "entity": "binary_sensor.window_5_contact"
+                            },
+                            {
+                                "entity": "binary_sensor.window_6_contact"
+                            },
+                            {
+                                "entity": "binary_sensor.balcony_door_contact"
+                            },
+                            {
+                                "entity": "binary_sensor.enttrance_door_contact"
+                            }
                         ]
+                    },
+                    {
+                        "type": "entities",
+                        "entities": [
+                            {
+                                "entity": "binary_sensor.wleak_kitchen_water_leak"
+                            }
+                        ],
+                        "title": "Wleak sensors"
                     },
                     {
                         "show_name": true,
@@ -1678,15 +1667,6 @@
                         "title": "Weather window"
                     },
                     {
-                        "type": "entities",
-                        "entities": [
-                            {
-                                "entity": "binary_sensor.wleak_kitchen_water_leak"
-                            }
-                        ],
-                        "title": "Wleak sensors"
-                    },
-                    {
                         "show_name": true,
                         "show_icon": true,
                         "show_state": true,
@@ -1708,33 +1688,8 @@
                         "title": "Weather desk"
                     },
                     {
-                        "type": "entities",
-                        "entities": [
-                            {
-                                "entity": "binary_sensor.window_1_contact"
-                            },
-                            {
-                                "entity": "binary_sensor.window_2_contact"
-                            },
-                            {
-                                "entity": "binary_sensor.window_3_contact"
-                            },
-                            {
-                                "entity": "binary_sensor.window_4_contact"
-                            },
-                            {
-                                "entity": "binary_sensor.window_5_contact"
-                            },
-                            {
-                                "entity": "binary_sensor.window_6_contact"
-                            },
-                            {
-                                "entity": "binary_sensor.balcony_door_contact"
-                            },
-                            {
-                                "entity": "binary_sensor.enttrance_door_contact"
-                            }
-                        ]
+                        "type": "media-control",
+                        "entity": "media_player.lg_webos_smart_tv"
                     },
                     {
                         "show_name": true,
@@ -1803,63 +1758,10 @@
                         "type": "entities",
                         "entities": [
                             {
-                                "entity": "switch.bathroom_switch_switch"
-                            },
-                            {
-                                "entity": "switch.sauna_bath_mirror_switch_l1"
-                            },
-                            {
-                                "entity": "switch.sauna_bath_mirror_switch_l2"
-                            },
-                            {
-                                "entity": "switch.bedroom_switch_switch_l1"
-                            },
-                            {
-                                "entity": "switch.bedroom_switch_switch_l2"
-                            },
-                            {
-                                "entity": "switch.reading_area_near_balcony_switch"
-                            },
-                            {
-                                "entity": "switch.picture_nft_relay_switch_l1"
-                            },
-                            {
-                                "entity": "switch.storage_room_and_hallway_switch_l2"
-                            },
-                            {
-                                "entity": "switch.storage_room_and_hallway_switch_l1"
-                            },
-                            {
-                                "entity": "switch.main_work_zone_relay_switch"
-                            },
-                            {
-                                "entity": "switch.work_zone_wall_switch_switch"
-                            },
-                            {
-                                "entity": "switch.kitchen_main_switch"
-                            },
-                            {
-                                "entity": "switch.kitchen_cooking_area_switch"
-                            },
-                            {
-                                "entity": "switch.toilet_switch_switch"
-                            }
-                        ],
-                        "state_color": true,
-                        "title": "Light switch"
-                    },
-                    {
-                        "type": "entities",
-                        "entities": [
-                            {
                                 "entity": "switch.kitchen_plug_switch"
                             }
                         ],
                         "title": "Smart plug"
-                    },
-                    {
-                        "type": "media-control",
-                        "entity": "media_player.yandex_station_u004kj0009gf6k"
                     },
                     {
                         "type": "entities",
@@ -1868,17 +1770,15 @@
                         ]
                     },
                     {
-                        "type": "light",
-                        "entity": "light.working_area_wall_light_light"
-                    },
-                    {
-                        "show_state": false,
-                        "show_name": true,
-                        "camera_view": "live",
-                        "type": "picture-entity",
-                        "name": "BIgBro",
-                        "entity": "camera.big_bro_mainstream",
-                        "aspect_ratio": "50%"
+                        "type": "entities",
+                        "entities": [
+                            {
+                                "entity": "button.create_backup"
+                            },
+                            {
+                                "entity": "button.restore_from_backup"
+                            }
+                        ]
                     }
                 ]
             },
@@ -1973,14 +1873,6 @@
                             },
                             {
                                 "type": "state-icon",
-                                "entity": "binary_sensor.motion_bedroom_occupancy",
-                                "style": {
-                                    "top": "53%",
-                                    "left": "17%"
-                                }
-                            },
-                            {
-                                "type": "state-icon",
                                 "entity": "binary_sensor.wleak_kitchen_water_leak",
                                 "style": {
                                     "top": "39%",
@@ -2041,14 +1933,6 @@
                                 "style": {
                                     "top": "81%",
                                     "left": "94%"
-                                }
-                            },
-                            {
-                                "type": "state-badge",
-                                "entity": "sensor.weather_mak_temperature",
-                                "style": {
-                                    "top": "55%",
-                                    "left": "32%"
                                 }
                             },
                             {
@@ -2331,298 +2215,7 @@
                                 }
                             }
                         ],
-                        "image": "/local/shtab_home.png"
-                    }
-                ]
-            },
-            {
-                "theme": "Backend-selected",
-                "title": "Work Zone",
-                "path": "work-zone",
-                "icon": "",
-                "badges": [],
-                "cards": [
-                    {
-                        "show_name": true,
-                        "show_icon": true,
-                        "show_state": true,
-                        "type": "glance",
-                        "entities": [
-                            {
-                                "entity": "sensor.weather_desk_battery"
-                            },
-                            {
-                                "entity": "sensor.weather_desk_humidity"
-                            },
-                            {
-                                "entity": "sensor.weather_desk_illuminance"
-                            },
-                            {
-                                "entity": "sensor.weather_desk_temperature"
-                            }
-                        ],
-                        "title": "Weather desk"
-                    },
-                    {
-                        "show_name": true,
-                        "show_icon": true,
-                        "show_state": true,
-                        "type": "glance",
-                        "entities": [
-                            {
-                                "entity": "sensor.weather_window_battery"
-                            },
-                            {
-                                "entity": "sensor.weather_window_humidity"
-                            },
-                            {
-                                "entity": "sensor.weather_window_pressure"
-                            },
-                            {
-                                "entity": "sensor.weather_window_temperature"
-                            }
-                        ],
-                        "title": "Weather window"
-                    },
-                    {
-                        "type": "entities",
-                        "entities": [
-                            {
-                                "entity": "binary_sensor.window_3_contact"
-                            },
-                            {
-                                "entity": "binary_sensor.window_4_contact"
-                            },
-                            {
-                                "entity": "binary_sensor.window_5_contact"
-                            },
-                            {
-                                "entity": "binary_sensor.window_6_contact"
-                            }
-                        ],
-                        "title": "Windows"
-                    },
-                    {
-                        "show_name": true,
-                        "show_icon": true,
-                        "show_state": true,
-                        "type": "glance",
-                        "entities": [
-                            {
-                                "entity": "sensor.motion_work_zone_battery"
-                            },
-                            {
-                                "entity": "sensor.motion_work_zone_illuminance"
-                            },
-                            {
-                                "entity": "binary_sensor.motion_work_zone_occupancy"
-                            }
-                        ],
-                        "title": "Motion work zone"
-                    },
-                    {
-                        "show_name": true,
-                        "show_icon": true,
-                        "show_state": true,
-                        "type": "glance",
-                        "entities": [
-                            {
-                                "entity": "sensor.motion_entrance_battery"
-                            },
-                            {
-                                "entity": "sensor.motion_entrance_illuminance"
-                            },
-                            {
-                                "entity": "binary_sensor.motion_entrance_occupancy"
-                            }
-                        ],
-                        "title": "Motion entrance"
-                    },
-                    {
-                        "type": "entities",
-                        "entities": [
-                            {
-                                "entity": "light.working_area_wall_light_light"
-                            },
-                            {
-                                "entity": "switch.work_zone_wall_switch_switch"
-                            }
-                        ],
-                        "title": "Work zone wall light",
-                        "state_color": true
-                    },
-                    {
-                        "type": "entities",
-                        "entities": [
-                            {
-                                "entity": "switch.main_work_zone_relay_switch"
-                            }
-                        ],
-                        "title": "Work zone main light",
-                        "state_color": true
-                    },
-                    {
-                        "type": "media-control",
-                        "entity": "media_player.yandex_station_u004kj0009gf6k"
-                    },
-                    {
-                        "type": "grid",
-                        "square": false,
-                        "columns": 1,
-                        "cards": [
-                            {
-                                "type": "entities",
-                                "entities": [
-                                    {
-                                        "entity": "binary_sensor.cctv_cell_motion_detection",
-                                        "name": "Cell Motion Detection"
-                                    },
-                                    {
-                                        "entity": "binary_sensor.cctv_motion_alarm",
-                                        "name": "Motion Alarm"
-                                    }
-                                ],
-                                "title": "cctv"
-                            },
-                            {
-                                "type": "picture-entity",
-                                "entity": "camera.cctv_mainstream"
-                            }
-                        ]
-                    },
-                    {
-                        "type": "picture-entity",
-                        "entity": "camera.ptz_cctv_mainstream"
-                    }
-                ]
-            },
-            {
-                "theme": "Backend-selected",
-                "title": "Bedroom",
-                "path": "bedroom",
-                "badges": [],
-                "cards": [
-                    {
-                        "show_name": true,
-                        "show_icon": true,
-                        "show_state": true,
-                        "type": "glance",
-                        "entities": [
-                            {
-                                "entity": "sensor.weather_bedroom_battery"
-                            },
-                            {
-                                "entity": "sensor.weather_bedroom_humidity"
-                            },
-                            {
-                                "entity": "sensor.weather_bedroom_pressure"
-                            },
-                            {
-                                "entity": "sensor.weather_bedroom_temperature"
-                            }
-                        ],
-                        "title": "Weather bedroom"
-                    },
-                    {
-                        "type": "glance",
-                        "entities": [
-                            {
-                                "entity": "sensor.motion_bedroom_battery"
-                            },
-                            {
-                                "entity": "binary_sensor.motion_bedroom_occupancy"
-                            }
-                        ]
-                    },
-                    {
-                        "type": "entities",
-                        "entities": [
-                            {
-                                "entity": "switch.bedroom_switch_switch_l1"
-                            },
-                            {
-                                "entity": "switch.bedroom_switch_switch_l2"
-                            }
-                        ],
-                        "show_header_toggle": true,
-                        "title": "Light"
-                    }
-                ]
-            },
-            {
-                "theme": "Backend-selected",
-                "title": "Kitchen",
-                "path": "kitchen",
-                "badges": [],
-                "cards": [
-                    {
-                        "type": "entities",
-                        "entities": [
-                            {
-                                "entity": "binary_sensor.window_1_contact"
-                            },
-                            {
-                                "entity": "binary_sensor.window_2_contact"
-                            }
-                        ],
-                        "title": "Windows"
-                    },
-                    {
-                        "show_name": true,
-                        "show_icon": true,
-                        "show_state": true,
-                        "type": "glance",
-                        "entities": [
-                            {
-                                "entity": "sensor.weather_kitchen_battery"
-                            },
-                            {
-                                "entity": "sensor.weather_kitchen_humidity"
-                            },
-                            {
-                                "entity": "sensor.weather_kitchen_pressure"
-                            },
-                            {
-                                "entity": "sensor.weather_kitchen_temperature"
-                            }
-                        ],
-                        "title": "Weather kitchen"
-                    },
-                    {
-                        "type": "entities",
-                        "entities": [
-                            {
-                                "entity": "binary_sensor.wleak_kitchen_water_leak"
-                            }
-                        ],
-                        "title": "Wleak sensors"
-                    },
-                    {
-                        "type": "light",
-                        "entity": "light.kitchen_main_light_light"
-                    },
-                    {
-                        "type": "light",
-                        "entity": "light.kitchen_led1_light"
-                    },
-                    {
-                        "type": "light",
-                        "entity": "light.kitchen_led2_light"
-                    },
-                    {
-                        "type": "light",
-                        "entity": "light.kitchen_led3_light"
-                    },
-                    {
-                        "type": "entities",
-                        "entities": [
-                            {
-                                "entity": "switch.kitchen_main_switch"
-                            },
-                            {
-                                "entity": "switch.kitchen_cooking_area_switch"
-                            }
-                        ]
+                        "image": "QmdaFHqrKraVQrFkrMar7DxzBYGGEwuQobyLFZpbYJtRcr"
                     }
                 ]
             }
