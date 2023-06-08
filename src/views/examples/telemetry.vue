@@ -68,6 +68,7 @@ onMounted( async () => {
     watch(() => store.state.robonomicsUIvue.rws.launch, value => {
       console.log('LAUNCH', value)
       updateTime.value = Date.now()
+      store.dispatch('app/setStatus', {value: 'Launch initiated', timeout: null})
       // обновление статуса для лаунч
       // setTimeout(async () => {
       //   launchStatus.value = ['1684238715398', 'error', 'message test']
@@ -79,16 +80,17 @@ onMounted( async () => {
     configData.value = await getDatalog("config")
     datalogData.value = await getDatalog("telemetry")
     updateTime.value = Date.now()
+    store.dispatch('app/setStatus', {value: 'Config & telemetry loaded', timeout: 3000})
 
     // обновление данных телеметрии
     setTimeout(async () => {
       datalogData.value = await getDatalog("telemetry2")
       updateTime.value = Date.now()
+      store.dispatch('app/setStatus', {value: 'Config & telemetry updated', timeout: 3000})
+
     }, 10000)
     
     /* - test async */
-
-    console.log('config', configData.value)
 })
 /* - get launch command */
 </script>
