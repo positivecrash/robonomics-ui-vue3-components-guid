@@ -1637,6 +1637,15 @@
                         ]
                     },
                     {
+                        "type": "entities",
+                        "entities": [
+                            {
+                                "entity": "binary_sensor.wleak_kitchen_water_leak"
+                            }
+                        ],
+                        "title": "Wleak sensors"
+                    },
+                    {
                         "show_name": true,
                         "show_icon": true,
                         "show_state": true,
@@ -1656,15 +1665,6 @@
                             }
                         ],
                         "title": "Weather window"
-                    },
-                    {
-                        "type": "entities",
-                        "entities": [
-                            {
-                                "entity": "binary_sensor.wleak_kitchen_water_leak"
-                            }
-                        ],
-                        "title": "Wleak sensors"
                     },
                     {
                         "show_name": true,
@@ -1767,6 +1767,17 @@
                         "type": "entities",
                         "entities": [
                             "sensor.current_version"
+                        ]
+                    },
+                    {
+                        "type": "entities",
+                        "entities": [
+                            {
+                                "entity": "button.create_backup"
+                            },
+                            {
+                                "entity": "button.restore_from_backup"
+                            }
                         ]
                     }
                 ]
@@ -2210,6 +2221,5 @@
             }
         ]
     },
-    "twin_id": 233,
-    "sending_timeout": 600
+    "twin_id": 43
 }

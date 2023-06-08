@@ -31256,7 +31256,7 @@
     },
     "light.0x00158d000127fd62_light": {
       "units": "None",
-      "state": "on",
+      "state": "off",
       "attributes": {
         "min_color_temp_kelvin": 2000,
         "max_color_temp_kelvin": 6535,

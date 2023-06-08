@@ -55,7 +55,7 @@ onMounted( () => {
   store.commit('rws/setLinkUsers', '/rwsuserslist')
   store.commit('rws/setLinkUseractivate', '/rwsusersetup')
   store.commit('rws/setLinkHaSetup', '/hasetup')
-  store.commit('ipfs/setGateways', ['https://ipfs.io/ipfs/'])
+  store.commit('ipfs/setGateways', ['https://ipfs.io/ipfs/', 'https://ipfs.io/ipfs2/'])
   
 
   // usage

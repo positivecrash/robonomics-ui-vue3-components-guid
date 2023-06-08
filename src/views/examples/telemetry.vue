@@ -3,10 +3,9 @@
         <dapp-header title="Smart devices" />
 
         <robo-template-devices-layout 
-          :onUpdate = "onUpdateTest"
-
           :datalog="datalogData"
           :config="configData"
+          :updateTime="updateTime"
         />
 
     </robo-layout>
@@ -19,17 +18,21 @@
 
 <script setup>
 import { ref, onMounted, watch } from 'vue'
-import datalog from '../../data/shtab2/telemetry.json'
-import datalog2 from '../../data/shtab2/telemetry2.json'
-import config from '../../data/shtab2/config.json'
+// import datalog from '../../data/shtab2/telemetry.json'
+// import datalog2 from '../../data/shtab2/telemetry2.json'
+// import config from '../../data/shtab2/config.json'
+
+import datalog from '../../data/shtab/telemetry.json'
+import datalog2 from '../../data/shtab/telemetry.json'
+import config from '../../data/shtab/config.json'
 
 import dappHeader from '../../components/example/Header.vue'
 
-let onUpdateTest = (updateStatus) => {
-  console.log('onUpdateTest')
-  updateStatus('ok')
-  // updateStatus('error')
-}
+// let onUpdateTest = updateStatus => {
+//   console.log('onUpdateTest')
+//   updateStatus('ok', Date.now())
+//   // updateStatus('error')
+// }
 
 /* + test async */
 // функция для эмуляции задержки загрузки данных из чейна
@@ -53,6 +56,8 @@ let getDatalog = (type) => {
 
 const configData = ref(null)
 const datalogData = ref(null)
+const updateTime = ref(null)
+// const launchStatus = ref(null)
 /* - test async */
 
 /* + get launch command */
@@ -62,18 +67,28 @@ const store = useStore()
 onMounted( async () => {
     watch(() => store.state.robonomicsUIvue.rws.launch, value => {
       console.log('LAUNCH', value)
+      updateTime.value = Date.now()
+      // обновление статуса для лаунч
+      // setTimeout(async () => {
+      //   launchStatus.value = ['1684238715398', 'error', 'message test']
+      // }, 1000)
     })
 
     /* + test async */
     // первая загрузка данных
     configData.value = await getDatalog("config")
     datalogData.value = await getDatalog("telemetry")
+    updateTime.value = Date.now()
 
     // обновление данных телеметрии
     setTimeout(async () => {
-      datalogData.value = await getDatalog("telemetry2");
+      datalogData.value = await getDatalog("telemetry2")
+      updateTime.value = Date.now()
     }, 10000)
+    
     /* - test async */
+
+    console.log('config', configData.value)
 })
 /* - get launch command */
 </script>
