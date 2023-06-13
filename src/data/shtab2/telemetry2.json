@@ -30200,7 +30200,7 @@
     },
     "switch.0xa4c138f7b28bd48e_switch_l1": {
       "units": "None",
-      "state": "off",
+      "state": "on",
       "attributes": { "friendly_name": "Rest zone" },
       "history": [
         { "state": "on", "date": "2023-05-02 06:22:19.717288+00:00" },
