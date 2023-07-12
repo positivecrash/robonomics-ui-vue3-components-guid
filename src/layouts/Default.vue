@@ -14,6 +14,7 @@
                     <router-link to="/rwsusersetup">Rws User setup</router-link>
                     <router-link to="/rwsuserslist">Rws Users list</router-link>
                     <router-link to="/hasetup">Hass password</router-link>
+                    <router-link to="/services">Services</router-link>
                 </section>
             </div>
         </div>
