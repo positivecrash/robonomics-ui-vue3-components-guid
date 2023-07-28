@@ -3,6 +3,7 @@
         logoIcon="images/logo-white.png"
         :navigation="navigation"
         :title="props.title"
+        version="1.0.0"
     />
 </template>
 
