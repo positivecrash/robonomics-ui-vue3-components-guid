@@ -4,13 +4,25 @@
 
         <robo-layout-section>
           <robo-template-rws-activate 
-          price="1.0000001"
-          activationtime="2"
-          available="7"
-
-          @on-rws-activate = "onActivate"
-        />
+            price="1.0000001"
+            activationtime="2"
+            available="7"
+            rwsStatus="renew"
+            rwsMessage="Your subscription has been expired, please renew it"
+          />
         </robo-layout-section>
+
+        <!-- 
+          Примеры статусов и сообщений:
+
+          rwsStatus="new"
+
+          rwsStatus="error"
+          rwsMessage="Subscription can not be activated due to unsuffcicient XRT balance"
+
+          rwsStatus="renew"
+          rwsMessage="Your subscription has been expired, please renew it"
+        -->
 
     </robo-layout>
 
@@ -22,11 +34,4 @@
 
 <script setup>
 import dappHeader from '../../components/example/Header.vue'
-
-let onActivate = (rwsStatus) => {
-  console.log('onActivate test')
-  rwsStatus('ok')
-  // rwsStatus('error', 'Subscription can not be activated due to unsuffcicient XRT balance')
-}
-
 </script>
