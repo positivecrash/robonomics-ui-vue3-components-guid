@@ -7,8 +7,9 @@
             price="1.0000001"
             activationtime="2"
             available="7"
-            rwsStatus="renew"
-            rwsMessage="Your subscription has been expired, please renew it"
+            :rwsStatus="status"
+
+            @on-activate="testEmit"
           />
         </robo-layout-section>
 
@@ -22,6 +23,9 @@
 
           rwsStatus="renew"
           rwsMessage="Your subscription has been expired, please renew it"
+
+          rwsStatus="ok"
+          rwsMessage="You already have subsription"
         -->
 
     </robo-layout>
@@ -33,5 +37,17 @@
 </script>
 
 <script setup>
+import { ref } from 'vue'
 import dappHeader from '../../components/example/Header.vue'
+
+const status = ref('new')
+
+let testEmit = () => {
+  console.log('testEmit')
+  status.value = 'processing'
+  
+  setTimeout(() => {
+    status.value = 'ok'
+  }, 1000)
+}
 </script>
