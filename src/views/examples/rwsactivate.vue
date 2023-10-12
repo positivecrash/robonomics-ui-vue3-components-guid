@@ -38,7 +38,7 @@
 
 <script setup>
 import { ref } from 'vue'
-import dappHeader from '../../components/example/Header.vue'
+import dappHeader from '../../components/Header.vue'
 
 const status = ref('new')
 

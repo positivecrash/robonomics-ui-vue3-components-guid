@@ -1,9 +1,8 @@
 <template>
     <robo-layout-header 
-        logoIcon="images/logo-white.png"
+        logoIcon="images/logo-white.svg"
         :navigation="navigation"
         :title="props.title"
-        version="1.0.0"
     />
 </template>
 
@@ -49,7 +48,7 @@ const navigation =  [
         links: [
         {
             title: 'Services',
-            link: 'page-services',
+            link: 'services',
             type: 'router'
         }]
     },

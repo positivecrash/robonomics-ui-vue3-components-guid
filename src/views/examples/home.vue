@@ -84,6 +84,8 @@
           </robo-grid>
         </robo-layout-section>
 
+        <dapp-footer />
+
     </robo-layout>
 
 </template>
@@ -93,7 +95,8 @@
 </script>
 
 <script setup>
-import dappHeader from '../../components/example/Header.vue'
+import dappHeader from '../../components/Header.vue'
+import dappFooter from '../../components/Footer.vue'
 
 import { computed } from 'vue'
 

@@ -1,6 +1,6 @@
 <template>
     <div id="page">
-        <div id="sidebar">
+        <!-- <div id="sidebar">
             <div id="sidebar-content">
                 <div class="sidebar-title">robonomics-ui-vue</div>
 
@@ -17,7 +17,7 @@
                     <router-link to="/services">Services</router-link>
                 </section>
             </div>
-        </div>
+        </div> -->
         <div id="content">
             <router-view/>
         </div>
@@ -27,7 +27,7 @@
 <style scoped>
     #page {
        display: grid;
-       grid-template-columns: 200px auto;
+       /* grid-template-columns: 200px auto; */
     }
 
     #sidebar {

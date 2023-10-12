@@ -119,7 +119,7 @@
 </script>
 
 <script setup>
-import dappHeader from '../../components/example/Header.vue'
+import dappHeader from '../../components/Header.vue'
 
 import { ref } from 'vue'
 let address = ref(null)

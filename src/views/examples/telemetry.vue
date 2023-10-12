@@ -26,7 +26,7 @@ import config from '../../data/shtab2/config.json'
 // import datalog2 from '../../data/shtab/telemetry.json'
 // import config from '../../data/shtab/config.json'
 
-import dappHeader from '../../components/example/Header.vue'
+import dappHeader from '../../components/Header.vue'
 
 // let onUpdateTest = updateStatus => {
 //   console.log('onUpdateTest')

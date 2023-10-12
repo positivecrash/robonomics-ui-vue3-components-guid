@@ -20,7 +20,7 @@ let checkStatus = (owner, enddate) => {
   if( now && end && (end - now) < 0 ) {
     /* получаем дату окончания подписки для owner и возвращаем */
     /* пока тут просто дата для тестов */
-    return Date.parse('02/23/2023')
+    return Date.parse('10/23/2023')
   } else {
     return enddate
   }
@@ -45,6 +45,7 @@ onMounted( () => {
           enddate: checkStatus(item.owner, item.enddate)
     }))
 
+    console.log('rws/rewrite', arr)
     store.dispatch('rws/rewrite', arr)
   }
   

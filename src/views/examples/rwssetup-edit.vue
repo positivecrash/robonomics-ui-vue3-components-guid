@@ -25,7 +25,7 @@
 </script>
 
 <script setup>
-import dappHeader from '../../components/example/Header.vue'
+import dappHeader from '../../components/Header.vue'
 
 import { ref } from 'vue'
 let owner = ref('5CSbZ7wG456oty4WoiX6a1J88VUbrCXLhrKVJ9q95BsYH4TZ')
