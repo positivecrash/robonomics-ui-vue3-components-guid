@@ -1,4 +1,5 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
+import CrossChain from '../views/examples/crosschain.vue'
 import Telemetry from '../views/examples/telemetry.vue'
 import Home from '../views/examples/home.vue'
 import Rwssetup from '../views/examples/rwssetup.vue'
@@ -11,6 +12,11 @@ import Hasetup from '../views/examples/hasetup.vue'
 import Services from '../views/examples/services.vue'
 
 const routes = [
+  {
+    path: '/cross-chain',
+    name: 'ExampleCrossChain',
+    component: CrossChain
+  },
   {
     path: '/telemetry',
     name: 'ExampleTelemetry',

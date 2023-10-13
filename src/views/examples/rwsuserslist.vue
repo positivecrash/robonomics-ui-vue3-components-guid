@@ -2,13 +2,8 @@
     <robo-layout>
         <dapp-header title="Users in your RWS" />
 
-        <robo-layout-section v-if="rws?.length < 1 || !users || users.length < 1" rwsrecover>
+        <robo-layout-section v-if="rws?.length < 1 || !users || users.length < 1">
           <robo-section width="narrow" gcenter>
-            <robo-template-rws-activeselect 
-              v-if="rws?.length > 1" 
-              block
-              label="Selected RWS"
-            />
             <robo-template-rws-users-empty />
           </robo-section>
         </robo-layout-section>

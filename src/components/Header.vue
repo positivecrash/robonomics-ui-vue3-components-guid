@@ -50,6 +50,11 @@ const navigation =  [
             title: 'Services',
             link: 'services',
             type: 'router'
+        },
+        {
+            title: 'Crosschain',
+            link: 'cross-chain',
+            type: 'router'
         }]
     },
 
