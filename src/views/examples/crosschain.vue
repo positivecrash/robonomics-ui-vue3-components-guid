@@ -17,11 +17,11 @@
                 />
 
                 <robo-card>
-                  <robo-grid offset="x0" gap="x05" galign="center">
-                    <robo-grid offset="x0" gap="x2" type="flex">
+                  
+                    <robo-grid offset="x0" gap="x1" columns="minmax(100px, 1fr) auto minmax(100px, 1fr)">
                       <robo-grid offset="x0" gap="x0" columns="1">
                         <robo-text size="small">From:</robo-text>
-                        <robo-grid type="flex" offset="x0" gap="x05">
+                        <robo-grid type="flex" offset="x0" gap="x05" galign="start">
                           <robo-image min="32px" max="32px" :src="chains[chainfrom].logo" />
                           <robo-text>{{chains[chainfrom].name}}</robo-text>
                         </robo-grid>
@@ -32,16 +32,16 @@
                         <robo-button @click.prevent="changeChain()" clean size="large"><robo-icon icon="right-left"/></robo-button>
                       </robo-grid>
 
-                      <robo-grid offset="x0" gap="x0" columns="1">
+                      <robo-grid offset="x0" gap="x0" columns="1" galign="right">
                         <robo-text size="small">To:</robo-text>
-                        <robo-grid type="flex" offset="x0" gap="x05">
+                        <robo-grid type="flex" offset="x0" gap="x05" galign="start">
                           <robo-image min="32px" max="32px" :src="chains[chainto].logo" />
                           <robo-text>{{chains[chainto].name}}</robo-text>
                         </robo-grid>
 
                       </robo-grid>
                     </robo-grid>
-                  </robo-grid>
+
                 </robo-card>
 
                 <robo-grid offset="x0" gap="x05">
