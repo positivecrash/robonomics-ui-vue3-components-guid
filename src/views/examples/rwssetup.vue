@@ -1,21 +1,21 @@
 <template>
-    <robo-layout>
-        <dapp-header title="RWS setup" />
+  <robo-layout>
+      <dapp-header title="RWS setup" />
 
-        <robo-layout-section rwsrecover>
-          
-          <robo-template-rws-setup 
-          v-model:owner="ownerNew"
-          v-model:controller="controllerNew"
-          v-model:scontroller="scontrollerNew"
-          v-model:name="nameNew"
-          v-model:enddate="enddateNew"
+      <robo-layout-section>
 
-          @on-rws-setup="testOnSetup"
-          @owner-changed="setEnddate"
-          />
-        </robo-layout-section>
-    </robo-layout>
+        <robo-template-rws-setup
+          :onRwsUpdate="rwsUpdateActions"
+          @request-users = "giveusers"
+          :onUserDelete="removeUser"
+          :onUserAdd="addUser"
+          :onSaveHapass="saveHapass"
+        />
+
+      </robo-layout-section>
+
+      <dapp-footer />
+  </robo-layout>
 
 </template>
 
@@ -25,23 +25,142 @@
 
 <script setup>
 import dappHeader from '../../components/Header.vue'
+import dappFooter from '../../components/Footer.vue'
+import { onMounted, ref, watch } from 'vue'
+import { useStore } from 'vuex'
+const store = useStore()
 
-import { ref } from 'vue'
-let ownerNew = ref(null)
-let controllerNew = ref(null)
-let scontrollerNew = ref(null)
-let nameNew = ref('My Smart Devices')
-let enddateNew = ref(null)
+let saveHapass = (user, userseed, passToSave, responsePass) => {
+  /*
+    сохранение пароля
 
-let setEnddate = () => {
-  console.log('test owner-changed')
-  enddateNew.value = Date.now()
+    нужно сначала проверить user, userseed - есть ли в подписке и тп
+    если не все в порядке, возвращай responsePass('error') и можно еще добавить в чем проблема в качестве сообщения 
+
+    USAGE: responsePass(status, message)
+    status = 'ok' если пароль для текущего 'user' записался
+    status = 'error' если пароль не записался
+    message не обязательно
+  */
+
+  setTimeout(() => {
+    responsePass('ok')
+    // responsePass('error', 'something went wrong during saving')
+  }, 1000)
 }
 
-let testOnSetup = (rwsStatus) => {
-  console.log('test on-rws-setup')
-  // rwsStatus('cancel')
-  rwsStatus('ok')
-  // rwsStatus('error', 'Your address not found in this subscription')
+let rwsUpdateActions = (rws, save) => {
+
+  /* Usage:
+
+  1) Check and save in chain some data from `rws`, if needed
+
+  2) Use `save` function with attributes for passing result to lib's component
+  save(status, message)
+  status может быть 'ok', 'error'
+  message любая строка */
+
+  console.log('rws', rws)
+
+  save('ok')
+  // save('error', 'Что-то не записалось')
 }
+
+
+
+const users = ref(null)
+
+let addUser = (user, add) => {
+
+  /*
+  Добавление пользователя.
+
+  setTimeout - я установила себе для тестов, 
+  но если есть вероятность, что действие будет происходить моментально, то надо оставить где-то 1000, 
+  чтобы пользователю был виден лоадер
+  
+  add(status, message)
+  status - результат действия, 'ok' (пользователь добавлен) или 'error' (пользователь не добавлен)
+  message - сообщение, необязательно. Имеет смысл толкьо что-то передавать при ошибке, если есть что сказать.
+  */
+
+  setTimeout(() => {
+
+    /* <тут какие-то действия по добавлению пользователя в подписку> */
+
+    add('ok')
+
+    //  у тебя это будет просто та же функция получения юзеров для активной подписки, я тут искусственно добавляю юзера в массив на уровне приложения для теста
+    getuserlist('add', user)
+  }, 3000)
+}
+
+
+let removeUser = (user, remove) => {
+  /*
+  Удаление пользователя.
+
+  setTimeout - я установила себе для тестов, 
+  но если есть вероятность, что действие будет происходить моментально, то надо оставить где-то 1000, 
+  чтобы пользователю был виден лоадер
+  
+  remove(status, message)
+  status - результат действия, 'ok' (пользователь удален) или 'error' (пользователь не удален)
+  message - сообщение, необязательно. Имеет смысл толкьо что-то передавать при ошибке, если есть что сказать.
+  */
+
+  setTimeout(() => {
+
+    /* <тут какие-то действия по удалению пользователя в подписке> */
+    
+    remove('ok')
+
+    //  у тебя это будет просто та же функция получения юзеров для активной подписки, я тут искусственно удаляю юзера из массива на уровне приложения для теста
+    getuserlist('delete', user)
+  }, 3000)
+}
+
+let getuserlist = (option, user) => {
+  /* 
+  получаем список юзеров и записываем его в дапп
+  setTimeout тут для имитации задержки сети (мне для тестов, в дапп не нужно переносить)
+
+  option, user - это мне для тестов, чтобы имитировать добавление и удаление
+  */
+
+  if(store.state.robonomicsUIvue.rws.active) { 
+    setTimeout( () => {
+
+      if(option === 'init') {
+        users.value = ['4Hd8jjS7MV5trMfPLok3KvpNTHt8frNwTb3ky6RwFzzXVQd7', '4Hd9ahv9X7528S5har385fqyUFSLbNZ2scg7x6ZWEA9e9EBV']
+      }
+
+      if(option === 'add') {
+        users.value.push(user)
+      }
+
+      if(option === 'delete') {
+        const i = users.value.indexOf(user)
+        if( i >= 0 ) {
+          users.value.splice(i, 1)
+        }
+      }
+
+      store.commit('rws/setUsers', users.value)
+    }, 2000)
+  }
+}
+
+onMounted( () => {
+
+  getuserlist('init')
+
+  /* Ещё раз обновляем список юзеров, если сменилась активная подписка */
+  watch( store.state.robonomicsUIvue.rws.active, () => {
+    getuserlist('init')
+  })
+
+})
+
+
 </script>
