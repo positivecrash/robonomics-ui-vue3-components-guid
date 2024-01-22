@@ -7,7 +7,7 @@ module.exports = {
             alias: {
                 vue: path.resolve(`./node_modules/vue`)
             },
-            extensions: ['.js','.jsx', '.css'] /* ~ */
+            extensions: ['.js','.jsx','.css'] /* ~ */
         }
     },
     // publicPath: process.env.NODE_ENV === 'production'
