@@ -44,8 +44,9 @@ let saveHapass = (user, userseed, passToSave, responsePass) => {
   */
 
   setTimeout(() => {
-    responsePass('ok')
+    // responsePass('ok')
     // responsePass('error', 'something went wrong during saving')
+    responsePass('cancel')
   }, 1000)
 }
 
@@ -62,15 +63,16 @@ let rwsUpdateActions = (rws, save) => {
 
   console.log('rws', rws)
 
-  save('ok')
-  // save('error', 'Что-то не записалось')
+  // save('ok')
+  // save('error', 'Что-то не записалось ой-ой-ой')
+  save('cancel')
 }
 
 
 
 const users = ref(null)
 
-let addUser = (user, add) => {
+let addUser = (user, setStatus) => {
 
   /*
   Добавление пользователя.
@@ -88,7 +90,9 @@ let addUser = (user, add) => {
 
     /* <тут какие-то действия по добавлению пользователя в подписку> */
 
-    add('ok')
+    // setStatus('ok')
+    // setStatus('error', 'test')
+    setStatus('cancel')
 
     //  у тебя это будет просто та же функция получения юзеров для активной подписки, я тут искусственно добавляю юзера в массив на уровне приложения для теста
     getuserlist('add', user)
@@ -111,12 +115,15 @@ let removeUser = (user, remove) => {
 
   setTimeout(() => {
 
+    console.log('user test', user)
+
     /* <тут какие-то действия по удалению пользователя в подписке> */
     
-    remove('ok')
+    // remove('ok')
+    remove('cancel')
 
     //  у тебя это будет просто та же функция получения юзеров для активной подписки, я тут искусственно удаляю юзера из массива на уровне приложения для теста
-    getuserlist('delete', user)
+    // getuserlist('delete', user)
   }, 3000)
 }
 
