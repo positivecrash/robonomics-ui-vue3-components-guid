@@ -14,7 +14,6 @@ let setExpireDate = () => {
   if(store.state.robonomicsUIvue.rws.active) {
     // записываем timestamp окончания подписки для подписки с владельцем active, если дата есть
     store.commit('rws/setExpiredate', new Date('2024-01-5').getTime())
-
     // Если подписка не находится совсем, то возращаем null
     // store.commit('rws/setExpiredate', null)
   }

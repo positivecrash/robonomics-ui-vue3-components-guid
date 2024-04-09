@@ -6,7 +6,6 @@
 
         <robo-template-rws-setup
           :onRwsUpdate="rwsUpdateActions"
-          @request-users = "giveusers"
           :onUserDelete="removeUser"
           :onUserAdd="addUser"
           :onSaveHapass="saveHapass"
@@ -30,7 +29,7 @@ import { onMounted, ref, watch } from 'vue'
 import { useStore } from 'vuex'
 const store = useStore()
 
-let saveHapass = (user, userseed, passToSave, responsePass) => {
+let saveHapass = (passToSave, responsePass) => {
   /*
     сохранение пароля
 
@@ -63,9 +62,9 @@ let rwsUpdateActions = (rws, save) => {
 
   console.log('rws', rws)
 
-  // save('ok')
+  save('ok')
   // save('error', 'Что-то не записалось ой-ой-ой')
-  save('cancel')
+  // save('cancel')
 }
 
 
@@ -139,7 +138,7 @@ let getuserlist = (option, user) => {
     setTimeout( () => {
 
       if(option === 'init') {
-        users.value = ['4Hd8jjS7MV5trMfPLok3KvpNTHt8frNwTb3ky6RwFzzXVQd7', '4Hd9ahv9X7528S5har385fqyUFSLbNZ2scg7x6ZWEA9e9EBV']
+        users.value = ['4Hd8jjS7MV5trMfPLok3KvpNTHt8frNwTb3ky6RwFzzXVQd7', '4Hd9ahv9X7528S5har385fqyUFSLbNZ2scg7x6ZWEA9e9EBV', '4Cso6mJhXZ2Gs6otXnQUdcxmBNdeqmpZaHguqAMXxNxKUeug']
       }
 
       if(option === 'add') {
@@ -165,6 +164,70 @@ onMounted( () => {
   /* Ещё раз обновляем список юзеров, если сменилась активная подписка */
   watch( store.state.robonomicsUIvue.rws.active, () => {
     getuserlist('init')
+  })
+
+  const IDB = window.indexedDB || window.webkitIndexedDB
+  if(!IDB) { return }
+
+  let db = null
+  const DBOpenReq = IDB.open(store.state.robonomicsUIvue.rws.dbname, store.state.robonomicsUIvue.rws.dbver)
+  
+  DBOpenReq.addEventListener('error', err => {
+    console.warn(err)
+  })
+
+  DBOpenReq.addEventListener('success', e => {
+    db = e.target.result;
+
+    if(db.objectStoreNames.contains('users')) {
+
+      let tx = db.transaction('users', 'readonly')
+
+      tx.addEventListener('error', err => {
+        console.warn(err)
+      })
+
+      const store = tx.objectStore('users')
+      const request = store.getAll()
+
+      request.addEventListener('error', e => {
+        console.warn(e)
+      })
+
+      request.addEventListener('success', async(e) => {
+        const userskeys = e.target.result
+
+        // пример как расшифровать пароль
+        const file = userskeys[0].file
+        const pass = userskeys[0].pass
+        const key = userskeys[0].key
+        const iv = userskeys[0].iv
+
+        console.log('json key', file)
+
+        const webcrypto = window.crypto.subtle || window.crypto.webkitSubtle
+
+        if (!webcrypto) {
+          console.error('Web Crypto API not supported')
+          return
+        }
+        await webcrypto.decrypt(
+          {
+              name: 'AES-GCM',
+              iv
+            },
+            key,
+            pass
+        )
+        .then(function(decrypted){
+            const decoder = new TextDecoder() 
+            console.log('encrypted pass', decoder.decode(decrypted))
+        })
+        .catch(function(err){
+            console.error(err);
+        })
+      })
+    }
   })
 
 })

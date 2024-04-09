@@ -31,7 +31,8 @@ let test = (rws, save) => {
   message любая строка */
 
   console.log('rws', rws)
-  save('ok', 'ПРИВЕТ')
+  // save('cancel')
+  save('ok')
   // save('error', 'Что-то не записалось')
 }
 </script>
