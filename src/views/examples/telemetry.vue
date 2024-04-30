@@ -1,11 +1,11 @@
 <template>
     <robo-layout>
-        <dapp-header title="Smart devices" />
-
+        <dapp-header title="Devices control panel" />
         <robo-template-devices-layout 
           :datalog="datalogData"
           :config="configData"
           :updateTime="updateTime"
+          connectionrelay
         />
 
     </robo-layout>
@@ -18,13 +18,13 @@
 
 <script setup>
 import { ref, onMounted, watch } from 'vue'
-import datalog from '../../data/shtab2/telemetry.json'
-import datalog2 from '../../data/shtab2/telemetry2.json'
-import config from '../../data/shtab2/config.json'
+// import datalog from '../../data/shtab2/telemetry.json'
+// import datalog2 from '../../data/shtab2/telemetry2.json'
+// import config from '../../data/shtab2/config.json'
 
-// import datalog from '../../data/shtab/telemetry.json'
-// import datalog2 from '../../data/shtab/telemetry.json'
-// import config from '../../data/shtab/config.json'
+import datalog from '../../data/Alena/telemetry.json'
+import datalog2 from '../../data/Alena/telemetry.json'
+import config from '../../data/Alena/config.json'
 
 import dappHeader from '../../components/Header.vue'
 

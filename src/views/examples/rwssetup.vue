@@ -50,6 +50,7 @@ let saveHapass = (passToSave, responsePass) => {
 }
 
 let rwsUpdateActions = (rws, save) => {
+  console.log('app rwsUpdateActions', rws, save)
 
   /* Usage:
 
@@ -90,8 +91,8 @@ let addUser = (user, setStatus) => {
     /* <тут какие-то действия по добавлению пользователя в подписку> */
 
     // setStatus('ok')
-    // setStatus('error', 'test')
-    setStatus('cancel')
+    setStatus('error', 'error message')
+    // setStatus('cancel')
 
     //  у тебя это будет просто та же функция получения юзеров для активной подписки, я тут искусственно добавляю юзера в массив на уровне приложения для теста
     getuserlist('add', user)
@@ -119,7 +120,8 @@ let removeUser = (user, remove) => {
     /* <тут какие-то действия по удалению пользователя в подписке> */
     
     // remove('ok')
-    remove('cancel')
+    // remove('cancel')
+    remove('error', 'error message')
 
     //  у тебя это будет просто та же функция получения юзеров для активной подписки, я тут искусственно удаляю юзера из массива на уровне приложения для теста
     // getuserlist('delete', user)
@@ -166,6 +168,7 @@ onMounted( () => {
     getuserlist('init')
   })
 
+  /* Работа с IndexedDB, достаем и расшифровываем ключ (потом добавится флаг, если человек выбрал его сохранить) */
   const IDB = window.indexedDB || window.webkitIndexedDB
   if(!IDB) { return }
 
@@ -197,35 +200,36 @@ onMounted( () => {
       request.addEventListener('success', async(e) => {
         const userskeys = e.target.result
 
-        // пример как расшифровать пароль
-        const file = userskeys[0].file
-        const pass = userskeys[0].pass
-        const key = userskeys[0].key
-        const iv = userskeys[0].iv
+        if(userskeys.length > 0){
+          const pair = userskeys[0]?.account
+          const key = userskeys[0]?.key
+          const iv = userskeys[0]?.iv
 
-        console.log('json key', file)
+          const webcrypto = window.crypto.subtle || window.crypto.webkitSubtle
 
-        const webcrypto = window.crypto.subtle || window.crypto.webkitSubtle
-
-        if (!webcrypto) {
-          console.error('Web Crypto API not supported')
-          return
+          if (!webcrypto) {
+            console.error('Web Crypto API not supported')
+            return
+          }
+          await webcrypto.decrypt(
+            {
+                name: 'AES-GCM',
+                iv
+              },
+              key,
+              pair
+          )
+          .then(function(decrypted){
+              const decoder = new TextDecoder()
+              const keys = decoder.decode(decrypted)
+              const acc = JSON.parse(keys)
+              console.log('decrypted', acc)
+              // acc.pair.sign("message")
+          })
+          .catch(function(err){
+              console.error(err);
+          })
         }
-        await webcrypto.decrypt(
-          {
-              name: 'AES-GCM',
-              iv
-            },
-            key,
-            pass
-        )
-        .then(function(decrypted){
-            const decoder = new TextDecoder() 
-            console.log('encrypted pass', decoder.decode(decrypted))
-        })
-        .catch(function(err){
-            console.error(err);
-        })
       })
     }
   })
