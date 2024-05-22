@@ -10,12 +10,21 @@ import { useStore } from 'vuex'
 const store = useStore()
 
 
-let setExpireDate = () => {
+const setExpireDate = () => {
   if(store.state.robonomicsUIvue.rws.active) {
     // записываем timestamp окончания подписки для подписки с владельцем active, если дата есть
     store.commit('rws/setExpiredate', new Date('2024-01-5').getTime())
     // Если подписка не находится совсем, то возращаем null
     // store.commit('rws/setExpiredate', null)
+  }
+}
+
+const getUsers = (gotusers) => {
+  // Пожалуйста, если есть подписка в настройках, запиши мне список добавленных в подписку юзеров
+  // и ещё см ниже, watch на активную подписку
+  // возможно это будет конфликтовать с rwssetup (там у нас раньше получался этот список), так что нужно будет проверить
+  if(store.state.robonomicsUIvue.rws.active) { 
+    store.commit('rws/setUsers', gotusers)
   }
 }
 
@@ -45,8 +54,10 @@ onMounted( () => {
 
   // Нужно для выбранной подписки обновить её срок
   setExpireDate()
+  getUsers(['4Hd8jjS7MV5trMfPLok3KvpNTHt8frNwTb3ky6RwFzzXVQd7', '4Hd9ahv9X7528S5har385fqyUFSLbNZ2scg7x6ZWEA9e9EBV', '4Cso6mJhXZ2Gs6otXnQUdcxmBNdeqmpZaHguqAMXxNxKUeug', '4CcVUoz3QByNRmrmneCKeFGHWikCer7zn1xsVTgxD69vfx6k', '4GBbqwuDTN8UkpJSdNM12feeLwVvuekR3evZf527riU3zodo'])
   watch(() => store.state.robonomicsUIvue.rws.active , () => {
     setExpireDate()
+    getUsers(['4CcVUoz3QByNRmrmneCKeFGHWikCer7zn1xsVTgxD69vfx6k'])
   })
 
 })

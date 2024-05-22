@@ -54,8 +54,8 @@ onMounted( async () => {
   */
 
   watch( () => store.state.robonomicsUIvue.polkadot.address, () => {
-    expiredate.value = new Date('2024-01-05').getTime()
-    // expiredate.value = null
+    // expiredate.value = new Date('2024-01-05').getTime()
+    expiredate.value = null
     // ну или дата окончания подписки для этого адреса
   })
 })
