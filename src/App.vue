@@ -60,6 +60,12 @@ onMounted( () => {
     getUsers(['4CcVUoz3QByNRmrmneCKeFGHWikCer7zn1xsVTgxD69vfx6k'])
   })
 
+  /* Передача данных по коннекту: libp2p / remote , relay */
+  /* setTimeout только для теста */
+  setTimeout( () => {
+    store.dispatch('app/setlibp2p', {connected: false}) /* libp2p = true, remote = false */
+    store.dispatch('app/setrelay', {connected: false}) /* пока так просто true/false */
+  }, 2000);
 })
 
 </script>

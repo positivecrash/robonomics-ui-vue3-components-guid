@@ -1,6 +1,6 @@
 <template>
   <robo-layout>
-      <dapp-header title="New RWS setup" />
+      <dapp-header title="New subscription configuration" />
       <robo-layout-section>
 
         <robo-template-rws-setup create :onRwsUpdate="test" />
@@ -29,7 +29,7 @@ let test = (rws, save) => {
   save(status, message)
   status может быть 'ok', 'error'
   message любая строка */
-
+  console.log('TTTT')
   console.log('rws', rws)
   // save('cancel')
   save('ok')

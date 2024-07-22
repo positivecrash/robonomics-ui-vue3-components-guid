@@ -12,7 +12,7 @@
   "dependencies": {
     "@polkadot/ui-keyring": "^3.6.4",
     "core-js": "^3.6.5",
-    "robonomics-ui-vue": "^0.3.3",
+    "robonomics-ui-vue": "^0.4.0",
     "simple-syntax-highlighter": "^2.2.0",
     "vue": "^3.0.0",
     "vue-router": "^4.2.5",

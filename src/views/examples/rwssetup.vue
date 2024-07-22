@@ -43,14 +43,13 @@ let saveHapass = (passToSave, responsePass) => {
   */
 
   setTimeout(() => {
-    // responsePass('ok')
+    responsePass('ok');
     // responsePass('error', 'something went wrong during saving')
-    responsePass('cancel')
+    // responsePass('cancel')
   }, 1000)
 }
 
 let rwsUpdateActions = (rws, save) => {
-  console.log('app rwsUpdateActions', rws, save)
 
   /* Usage:
 

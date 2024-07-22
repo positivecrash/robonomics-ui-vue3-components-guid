@@ -5,7 +5,6 @@
           :datalog="datalogData"
           :config="configData"
           :updateTime="updateTime"
-          connectionrelay
         />
 
     </robo-layout>
@@ -34,9 +33,18 @@ import dappHeader from '../../components/Header.vue'
 //   // updateStatus('error')
 // }
 
+const configData = ref(null)
+const datalogData = ref(null)
+const updateTime = ref(null)
+/* - test async */
+
+/* + get launch command */
+import { useStore } from 'vuex'
+const store = useStore()
+
 /* + test async */
 // функция для эмуляции задержки загрузки данных из чейна
-let getDatalog = (type) => {
+const getDatalog = (type) => {
   return new Promise(res => {
     let time = 500;
     if (type === "config") {
@@ -54,16 +62,35 @@ let getDatalog = (type) => {
   });
 }
 
-const configData = ref(null)
-const datalogData = ref(null)
-const updateTime = ref(null)
-/* - test async */
-
-/* + get launch command */
-import { useStore } from 'vuex'
-const store = useStore()
+const settelemetry = async () => {
+  configData.value = await getDatalog("config");
+  datalogData.value = await getDatalog("telemetry");
+  console.log('settelemetry configData.value', configData.value)
+  console.log('settelemetry datalogData.value', datalogData.value)
+  updateTime.value = Date.now();
+  store.dispatch("app/setStatus", {
+    value: "Config & telemetry loaded",
+    timeout: 3000
+  });
+}
 
 onMounted( async () => {
+
+    console.log('key', store.state.robonomicsUIvue.rws.user.key)
+
+    // проверка при загрузке на наличие ключа
+    if(store.state.robonomicsUIvue.rws.user.key && store.state.robonomicsUIvue.rws.user.key !== '') {
+      await settelemetry()
+    }
+
+    // получение данных только после того как будет ключ
+    watch(
+      () => store.state.robonomicsUIvue.rws.user.key,
+      async () => {
+        await settelemetry()
+        console.log('key upd', store.state.robonomicsUIvue.rws.user.key)
+      }
+    );
 
     watch(() => store.state.robonomicsUIvue.rws.launch, value => {
 
@@ -106,18 +133,17 @@ onMounted( async () => {
 
     /* + test async */
     // первая загрузка данных
-    configData.value = await getDatalog("config")
-    datalogData.value = await getDatalog("telemetry")
-    updateTime.value = Date.now()
-    store.dispatch('app/setStatus', {value: 'Config & telemetry loaded', timeout: 3000})
+    // configData.value = await getDatalog("config")
+    // datalogData.value = await getDatalog("telemetry")
+    // updateTime.value = Date.now()
+    // store.dispatch('app/setStatus', {value: 'Config & telemetry loaded', timeout: 3000})
 
     // обновление данных телеметрии
-    setTimeout(async () => {
-      datalogData.value = await getDatalog("telemetry2")
-      updateTime.value = Date.now()
-      store.dispatch('app/setStatus', {value: 'Config & telemetry updated', timeout: 3000})
-
-    }, 4000)
+    // setTimeout(async () => {
+    //   datalogData.value = await getDatalog("telemetry2")
+    //   updateTime.value = Date.now()
+    //   store.dispatch('app/setStatus', {value: 'Config & telemetry updated', timeout: 3000})
+    // }, 4000)
     
     /* - test async */
 })
